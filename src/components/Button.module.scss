@@ -1,0 +1,236 @@
+@use '../styles/variables' as *;
+@use 'sass:color';
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center; // Центрирование по горизонтали и вертикали
+  padding: 10px 20px;
+  border-radius: 100px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s;
+  gap: 8px;
+  text-align: center; // Центрирование текста
+  vertical-align: middle; // Выравнивание по вертикали
+  line-height: 1; // Единый межстрочный интервал
+
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: map-get($font-sizes, lg);
+
+  /* Иконки внутри кнопок */
+  .icon-left,
+  .icon-right {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0; // Предотвращает сжатие иконок
+  }
+
+   &.full-width {
+    display: flex;
+    width: 100%;
+  }
+
+  /* Filled button variants */
+  &.filled {
+    background-color: map-get($colors, primary);  
+    color: white;
+    border: none;
+
+    &:hover {
+      background-color: map-get($colors, primary-hover);
+      transform: scale(1.1);
+    }
+    
+    &:active {
+      background-color: map-get($colors, primary-active);
+      transform: scale(0.95);
+      box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.2);
+    }
+  }
+
+  /* Outlined button variants */
+  &.outlined {
+    background-color: transparent;
+    color: map-get($colors, primary);
+    border: 3px solid map-get($colors, primary);
+
+    &:hover {
+      background-color: map-get($colors, primary);
+      color: map-get($colors, white);
+      transform: scale(1.1);
+    }
+    
+    &:active {
+      background-color: map-get($colors, primary-active);
+      border-color: map-get($colors, primary-active);
+      transform: scale(0.95);
+      box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+  }
+
+  /* Text button variant */
+  &.text {
+    background-color: transparent;
+    color: map-get($colors, primary);
+    border: none;
+    padding: 10px 12px; // Уменьшенные отступы для текстовой кнопки
+
+    &:hover {
+      background-color: rgba(map-get($colors, primary), 0.1);
+    }
+    
+    &:active {
+      background-color: rgba(map-get($colors, primary), 0.2);
+    }
+  }
+
+  /* Icon button - base styles */
+  &.icon {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    
+    svg, i {
+      width: 20px;
+      height: 20px;
+      display: flex;
+      margin: 0 auto; // Центрирование иконки
+    }
+
+    /* Default icon button */
+    &:not(.outlined):not(.text) {
+      background-color: map-get($colors, primary);
+      color: map-get($colors, white);
+      border: none;
+
+      &:hover {
+        background-color: map-get($colors, primary-hover);
+        transform: scale(1.1);
+        box-shadow: 0 2px 8px rgba(map-get($colors, primary), 0.2);
+      }
+      
+      &:active {
+        background-color: map-get($colors, primary-active);
+        transform: scale(0.9);
+        box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.2);
+      }
+    }
+
+    /* Outlined icon button */
+    &.outlined {
+      background-color: transparent;
+      color: map-get($colors, primary);
+      border: 2px solid map-get($colors, primary);
+
+      &:hover {
+        background-color: map-get($colors, primary);
+        color: map-get($colors, white);
+        transform: scale(1.1);
+      }
+      
+      &:active {
+        background-color: map-get($colors, primary-active);
+        transform: scale(0.9);
+        box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+      }
+    }
+
+    /* Text icon button (minimal) */
+    &.text {
+      background-color: transparent;
+      color: map-get($colors, primary);
+      border: none;
+
+      &:hover {
+        background-color: rgba(map-get($colors, primary), 0.1);
+        transform: scale(1.1);
+      }
+      
+      &:active {
+        background-color: rgba(map-get($colors, primary), 0.2);
+        transform: scale(0.9);
+      }
+    }
+
+    /* Color variants for icon buttons */
+    @each $name, $color in $colors {
+      &.#{$name} {
+        &:not(.outlined):not(.text) {
+          background-color: $color;
+          color: color.scale($color, $lightness: -70%);
+
+          &:hover {
+            background-color: color.scale($color, $lightness: -10%);
+          }
+          
+          &:active {
+            background-color: color.scale($color, $lightness: -20%);
+          }
+        }
+
+        &.outlined {
+          color: $color;
+          border-color: $color;
+
+          &:hover {
+            background-color: $color;
+            color: color.scale($color, $lightness: -70%);
+          }
+          
+          &:active {
+            background-color: color.scale($color, $lightness: -10%);
+          }
+        }
+
+        &.text {
+          color: $color;
+
+          &:hover {
+            background-color: rgba($color, 0.1);
+          }
+          
+          &:active {
+            background-color: rgba($color, 0.2);
+          }
+        }
+      }
+    }
+
+    /* Sizes for icon buttons */
+    &.small {
+      width: 32px;
+      height: 32px;
+      
+      svg, i {
+        width: 16px;
+        height: 16px;
+      }
+    }
+
+    &.large {
+      width: 48px;
+      height: 48px;
+      
+      svg, i {
+        width: 24px;
+        height: 24px;
+      }
+    }
+  }
+
+  /* Disabled state for all buttons */
+  &:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none !important;
+  }
+}
