@@ -25,3 +25,11 @@ $spacing: (
   md: 1.5rem,       // 24px
   lg: 2rem          // 32px
 );
+
+$font-montserrat: 'Montserrat', sans-serif !default;
+$font-nunito: 'Nunito', sans-serif !default;
+
+:export {
+  fontMontserrat: $font-montserrat;
+  fontNunito: $font-nunito;
+}
