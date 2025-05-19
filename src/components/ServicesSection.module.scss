@@ -1,0 +1,66 @@
+/* ServicesSection.module.scss */
+@use '../styles/variables' as v;
+@use 'sass:map';
+
+.section {
+  width: 100%;
+  background-color: white;
+  padding: 24px 24px ;
+  border-radius: 24px;
+  
+}
+
+.sectionHeader {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 32px;
+}
+
+.sectionIcon {
+  width: 103px; 
+  height: 103px;
+  object-fit: contain;
+  gap: 12px;
+}
+
+.sectionTitle {
+  color: map.get(v.$colors, 'text-dark');
+  font-size: map.get(v.$font-sizes, 'lg');
+  font-family: v.$font-montserrat;
+  font-weight: 700;
+  text-align: center;
+}
+
+.servicesList {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.serviceItem {
+    width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.serviceName {
+  color: map.get(v.$colors, 'text-dark');
+  font-size: map.get(v.$font-sizes, 'md');
+  font-family: v.$font-nunito;
+  font-weight: 400;
+}
+
+.servicePrice {
+  color: map.get(v.$colors, 'text-dark');
+  font-size: map.get(v.$font-sizes, 'md');
+  font-family: v.$font-nunito;
+  font-weight: 700;
+}
+
+.divider {
+  height: 1px;
+  background-color: #eee;
+    
+}
