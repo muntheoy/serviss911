@@ -1,4 +1,3 @@
-import React from 'react';
 import Button from '../components/Button';
 import Peculiarity from '../components/Peculiarity';
 import styles from './ServiceHeader.module.scss';

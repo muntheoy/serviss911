@@ -1,11 +1,12 @@
 import React from 'react';
-import ServiceHeader from './components/ServiceHeader/';
+import './components/Stats'
 import './App.css';
+import Stats from './components/Stats';
 
 function App() {
   return (
     <div className="app">
-      <ServiceHeader />
+      <Stats/>
     </div>
   );
 }

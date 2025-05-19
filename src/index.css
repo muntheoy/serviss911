@@ -13,7 +13,6 @@
   --fw-bold: 700;
   
   /* Межстрочные интервалы */
-  --lh-body: 1.6;
   --lh-headings: 1.2;
 
   /* Отступы */
@@ -23,11 +22,11 @@
   
   /* Максимальная ширина контента */
   --max-content-width: 1920px;
+  background-color: #F0F0F0
 }
 
 /* Базовые настройки */
 body {
-  display: flex;
   flex-direction: column;
   align-items: center;
   min-height: 100vh;
