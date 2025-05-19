@@ -1,0 +1,80 @@
+@use '../styles/variables' as v;
+@use 'sass:map';
+
+
+.serviceHeader {
+  width: 100%;  
+  display: flex;
+  background: map.get(v.$colors, 'dark-bg') url('../assets/icons/pattern.svg') ;
+  flex-direction: row;
+  border-radius: 24px;
+  padding: 56px;
+  gap: 100px;
+  justify-content: baseline;
+}
+
+.content {
+width: 100%;
+display: flex;
+text-align: left;
+flex-direction: column;
+justify-content: space-between;
+
+}
+
+.title {
+  font-size: 40pt;
+  color: map.get(v.$colors, 'light-bg');
+  margin-bottom: 20px;
+  font-family: v.$font-montserrat;
+}
+
+.subtitle {
+  font-size: 1.25rem;
+  color: map.get(v.$colors, 'light-bg');
+  margin-bottom: 40px;
+  line-height: 1.6;
+  font-family: v.$font-nunito;
+}
+
+.features {
+width: 70%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.featureItem {
+  background: #f5f5f5;
+  padding: 12px 24px;
+  border-radius: 30px;
+  font-weight: 500;
+}
+
+.buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 12px;
+}
+
+@media (max-width: 768px) {
+  .title {
+    font-size: 2rem;
+  }
+  
+  .subtitle {
+    font-size: 1rem;
+  }
+  
+  .features {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+}

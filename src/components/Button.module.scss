@@ -2,10 +2,12 @@
 @use 'sass:color';
 
 .button {
+  width: 100%;
+  max-height: 71px;
   display: inline-flex;
   align-items: center;
   justify-content: center; // Центрирование по горизонтали и вертикали
-  padding: 10px 20px;
+  padding: 16px 16px;
   border-radius: 100px;
   font-weight: 600;
   cursor: pointer;

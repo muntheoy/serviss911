@@ -1,10 +1,11 @@
-import Peculiarity from './components/Peculiarity';
-import { FiHeart, FiStar, FiSettings } from 'react-icons/fi';
+import React from 'react';
+import ServiceHeader from './components/ServiceHeader/';
+import './App.css';
 
 function App() {
   return (
     <div className="app">
-      <Peculiarity text="Любая сложность" />
+      <ServiceHeader />
     </div>
   );
 }

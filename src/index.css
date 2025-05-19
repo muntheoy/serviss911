@@ -1,7 +1,4 @@
 /* Основные настройки шрифтов */
-/* @import '_variables'; */
-
-/* Подключение Google Fonts - оптимизированная версия */
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&family=Nunito:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&display=swap');
 
 :root {
@@ -18,14 +15,43 @@
   /* Межстрочные интервалы */
   --lh-body: 1.6;
   --lh-headings: 1.2;
+
+  /* Отступы */
+  --page-padding-x: 150px;
+  --page-padding-top: 56px;
+  --page-padding-bottom: 0;
+  
+  /* Максимальная ширина контента */
+  --max-content-width: 1920px;
 }
 
 /* Базовые настройки */
 body {
-  
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
   font-family: var(--font-nunito);
   font-weight: var(--fw-regular);
   line-height: var(--lh-body);
+  margin: 0;
+  padding: var(--page-padding-top) var(--page-padding-x) var(--page-padding-bottom);
+  box-sizing: border-box;
+}
+
+/* Контейнер для ограничения максимальной ширины */
+.container {
+  max-width: var(--max-content-width);
+  margin: 0 auto;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Если вам нужно, чтобы контент внутри контейнера был шириной 100% */
+.container > * {
+  width: 100%;
 }
 
 /* Заголовки */
@@ -36,26 +62,37 @@ h1, h2, h3 {
   margin: 0 0 0.5em;
 }
 
-/* Кнопки и интерактивные элементы */
-button, 
-.btn {
-  font-family: var(--font-montserrat);
-  font-weight: var(--fw-medium);
-  
-  /* Сброс стилей браузера */
-  border: none;
-  background: none;
-  cursor: pointer;
-  padding: 0;
+/* Адаптивные отступы */
+@media (max-width: 1920px) {
+  :root {
+    --page-padding-x: 100px;
+  }
 }
 
-/* Медиа-запросы для адаптивности */
+@media (max-width: 1600px) {
+  :root {
+    --page-padding-x: 80px;
+  }
+}
+
+@media (max-width: 992px) {
+  :root {
+    --page-padding-x: 60px;
+    --page-padding-top: 48px;
+  }
+}
+
 @media (max-width: 768px) {
   :root {
+    --page-padding-x: 40px;
+    --page-padding-top: 36px;
     --lh-body: 1.5;
   }
-  
-  h1 {
-    font-size: 1.8rem;
+}
+
+@media (max-width: 576px) {
+  :root {
+    --page-padding-x: 24px;
+    --page-padding-top: 32px;
   }
 }
