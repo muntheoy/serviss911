@@ -60,7 +60,7 @@
     border: 3px solid map-get($colors, primary-500);
 
     &:hover {
-      background-color: map-get($colors, primary-100);
+      background-color: map-get($colors, primary-100) ;
       color: map-get($colors, primary-500);
       transform: scale(1.1);
     }

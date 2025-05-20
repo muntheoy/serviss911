@@ -8,8 +8,7 @@ const RequestCard = ({
   icon = <FiMessageSquare size={24} />,
   title = "Оставляете заявку",
   description = "На сайте в чате, по телефону или в Telegram",
-  showButtons = true,
-  buttonVariant = "filled",
+  showButtons = true
 }) => {
   return (
     <div className={styles.card}>
@@ -22,7 +21,6 @@ const RequestCard = ({
 
       {showButtons && (
         <div className={styles.buttons}>
-
           <Button
             variant="icon"
             icon={<FiPhone />}

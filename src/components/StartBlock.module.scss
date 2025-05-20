@@ -1,0 +1,8 @@
+@use '../styles/variables' as *;
+@use 'sass:map';
+
+.contanier{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}

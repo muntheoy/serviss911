@@ -2,6 +2,7 @@ import React from 'react';
 import styles from './Peculiarity.module.scss';
 import keyIcon from '../assets/icons/key.svg';
 
+
 const Peculiarity = ({ 
   icon = <img src={keyIcon} alt="" className={styles.icon} />, 
   text 

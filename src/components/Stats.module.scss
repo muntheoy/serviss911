@@ -1,4 +1,4 @@
-@use '../styles/variables' as v;
+@use '../styles/variables' as *;
 @use 'sass:map';
 
 
@@ -7,26 +7,23 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 32px;
+  padding: 2rem 6rem;
   background-color: white;
   border-radius: 20px;  
-  align-items: center;
-
+  gap: 2rem;
 }
 
 .item {
-width: 100%;
   display: flex;
   align-items: center;
-  gap: 12px;
-
+  gap: 0.5rem;
 }
 
 .iconWrapper {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: map.get(v.$colors, 'primary');
+  background-color: map-get($colors, primary-500);
   color: white;
   width: 50px;
   height: 50px;
