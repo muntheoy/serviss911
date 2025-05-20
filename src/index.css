@@ -23,7 +23,7 @@
   --lh-headings: 1.2;
 
   /* Отступы */
-  --page-padding-x: 150px;
+  /* --page-padding-x: 150px; */
   --page-padding-top: 56px;
   --page-padding-bottom: 0;
   
@@ -71,7 +71,7 @@ h1, h2, h3 {
 /* Адаптивные отступы */
 @media (max-width: 1920px) {
   :root {
-    --page-padding-x: 100px;
+    --page-padding-x: 200px;
   }
 }
 

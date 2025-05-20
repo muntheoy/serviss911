@@ -1,0 +1,18 @@
+@use '../styles/variables' as *;
+@use 'sass:map';
+
+.container{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+ .container p{
+    font-size: 3rem;
+    font-family: $font-montserrat;
+    font-weight: 700;
+ }
+
+.button{
+    width: 15%;
+}
