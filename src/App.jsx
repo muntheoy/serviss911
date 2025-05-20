@@ -5,32 +5,20 @@ import lockIcon from "./assets/icons/lock.svg";
 import doorIcon from "./assets/icons/door.svg";
 import ServicesSection from "./components/ServicesSection";
 import Button from "./components/Button";
-import { FiArrowRight, FiHeart } from "react-icons/fi";
+import callIcon from "./assets/icons/fluent_person-call-20-filled.svg";
+import RequestCard from "./components/RequestCard";
 
 function App() {
   return (
     <div className="app">
-      <Button
-        variant="filled"
-        icon={<FiHeart />}
-        onClick={() => console.log("Лайк!")}
-      >
-        Добавить в избранное
-      </Button>
-
-         <Button
-        variant="outlined"
-        icon={<FiHeart />}
-        onClick={() => console.log("Лайк!")}
-      >
-        Добавить в избранное
-      </Button>
-      <Button
-  variant="icon"  // ← важно указать variant="icon"
-  icon={<FiHeart />}
-  ariaLabel="Добавить в избранное"
-  onClick={() => console.log("Лайк!")}
-/>
+      <RequestCard
+        stepNumber={1}
+        icon={<img src={callIcon} alt="Иконка звонка" className="card-icon" />}
+        title="Оставляете заявку"
+        description="На сайте в чате, по телефону или в Telegram"
+        showButtons={true}
+        buttonVariant="filled" // или "outlined", "text"
+      />
     </div>
   );
 }

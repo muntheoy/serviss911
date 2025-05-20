@@ -1,0 +1,68 @@
+@use '../styles/variables' as *;
+@use 'sass:map';
+
+.card {
+  position: relative;
+  border: 1px solid #e2e8f0;
+  border-radius: 1.5rem;
+  padding: 24px;
+  padding-top: 40px;
+  background: white;
+  transition: all 0.3s ease;
+}
+
+.stepIndicator {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  width: 3.625rem;
+  height: 3.625rem;
+  border-radius: 50%;
+  background: map-get($colors, primary-500);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.icon {
+  font-size: 32px;
+  color: #3b82f6;
+  margin-bottom: 16px;
+}
+
+.title {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 12px;
+  color: #1e293b;
+}
+
+.description {
+  font-size: 14px;
+  color: #64748b;
+  line-height: 1.5;
+}
+
+.buttons {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  gap: 0.5rem;
+  
+  /* Стили для вашего компонента Button */
+  .button {
+    width: 100%;
+    justify-content: center;
+  }
+}
