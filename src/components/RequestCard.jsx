@@ -14,10 +14,9 @@ const RequestCard = ({
   return (
     <div className={styles.card}>
       <div className={styles.stepIndicator}>{stepNumber}</div>
-
       <div className={styles.content}>
         <div className={styles.icon}>{icon}</div>
-        <h3 className={styles.title}>{title}</h3>
+        <p className={styles.title}>{title}</p>
         <p className={styles.description}>{description}</p>
       </div>
 

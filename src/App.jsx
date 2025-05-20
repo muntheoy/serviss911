@@ -19,6 +19,13 @@ function App() {
         showButtons={true}
         buttonVariant="filled" // или "outlined", "text"
       />
+      <RequestCard 
+        stepNumber={2}
+        icon={<img src={callIcon} alt="Иконка звонка" />}
+        title="Консультация"
+        description="Наш специалист свяжется с вами"
+        showButtons={false} // Отключаем кнопки
+      />
     </div>
   );
 }
