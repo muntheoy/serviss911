@@ -2,11 +2,10 @@
 @use 'sass:color';
 
 .button {
-min-width: 320px;
   display: inline-flex;
   align-items: center;
   justify-content: center; 
-  padding: 1.5rem 2rem;
+  padding: 1.5rem 1rem;
   border-radius: 100px;
   font-weight: 600;
   cursor: pointer;

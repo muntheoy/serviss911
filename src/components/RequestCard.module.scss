@@ -2,6 +2,7 @@
 @use 'sass:map';
 
 .card {
+  width: 100%;
   display: flex;
   flex-direction: column;
   position: relative;
@@ -11,7 +12,6 @@
   transition: all 0.3s ease;
   min-height: 385px;
    place-items: center;
-  aspect-ratio: 1/1;
 
 }
 
