@@ -10,8 +10,10 @@
 
 .app{
   width: 100%;
-  display: flex;
   align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: 8rem;
   
 }
 

@@ -4,5 +4,13 @@
 .contanier{
     display: flex;
     flex-direction: column;
+    gap: 4rem;
+    width: 100%;
+    
+}
+
+.cards{
+    display: flex;
+    flex-direction: row;
     gap: 1rem;
 }

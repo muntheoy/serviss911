@@ -2,12 +2,11 @@
 @use 'sass:color';
 
 .button {
-  width: 100%;
-  max-height: 71px  ;
+min-width: 320px;
   display: inline-flex;
   align-items: center;
   justify-content: center; 
-  padding: 16px 16px;
+  padding: 1.5rem 2rem;
   border-radius: 100px;
   font-weight: 600;
   cursor: pointer;
@@ -19,21 +18,19 @@
 
   font-family: 'Montserrat', sans-serif;
   font-weight: 700;
-  font-size: map-get($font-sizes, lg);
+  font-size: map-get($font-sizes, md);
 
   /* Иконки внутри кнопок */
   .icon-left,
   .icon-right {
+    width: 1rem;
+    height: 1rem;
     display: inline-flex;
     align-items: center;
     justify-content: center;
     flex-shrink: 0; // Предотвращает сжатие иконок
   }
 
-   &.full-width {
-    display: flex;
-    width: 100%;
-  }
 
   /* Filled button variants */
   &.filled {

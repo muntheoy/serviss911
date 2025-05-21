@@ -4,7 +4,7 @@ import Stats from "./Stats";
 import styles from './StartBlock.module.scss';
 
 
-const StartBlock = ({}) => {
+const Services = ({}) => {
   return (
     <div className={styles.contanier}>
       <ServiceHeader/>
@@ -13,4 +13,4 @@ const StartBlock = ({}) => {
   );
 };
 
-export default StartBlock;
+export default Services;
