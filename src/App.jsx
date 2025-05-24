@@ -5,6 +5,7 @@ import StartBlock from "./components/StartBlock";
 import WorkExperience from "./components/WorkExperience";
 import WorkExperienceCard from "./components/WorkExperienceCard";
 import FAQ from "./components/FAQ";
+import Reviews from "./components/Reviews";
 
  const mechanismsData = [
     {
@@ -33,6 +34,7 @@ function App() {
     <HowWeWork/>
     <WorkExperience/>
     <FAQ/>
+    <Reviews/>
     </div>
   );
 }

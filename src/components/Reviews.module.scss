@@ -1,0 +1,137 @@
+// Reviews.module.scss
+.reviewsSection {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 3.375rem;
+}
+
+.reviewsList {
+  display: flex;
+  gap: 2rem;
+  padding: 1rem 2rem;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  width: 100%;
+  -webkit-overflow-scrolling: touch;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+.reviewCard {
+  flex: 0 0 auto;
+  width: 500px;
+  min-width: 500px;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  background: #fff;
+  border-radius: 1rem;
+  padding: 2rem;
+  transition: transform 0.3s ease;
+
+  
+  
+}
+
+.avatarContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.avatarLeft {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.avatar {
+  width: 4rem;
+  height: 4rem;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #f0f0f0;
+  transition: transform 0.3s ease;
+  
+  &:hover {
+    transform: scale(1.05);
+  }
+}
+
+.reviewName {
+  margin: 0;
+  font-size: 1.25rem;
+  color: #333;
+  font-weight: 700;
+}
+
+.reviewText {
+  margin: 0;
+  color: #555;
+  line-height: 1.7;
+  font-size: 1rem;
+}
+
+.rating {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.star {
+  width: 1.8rem;
+  height: 1.8rem;
+  
+  path {
+    fill: #FFD700; // Золотой цвет
+    transition: all 0.2s ease;
+  }
+}
+
+/* Анимация появления карточек */
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.reviewCard {
+  animation: slideIn 0.6s ease forwards;
+  
+  @for $i from 1 through 10 {
+    &:nth-child(#{$i}) {
+      animation-delay: $i * 0.1s;
+    }
+  }
+}
+
+
+  .reviewsList {
+    padding: 1rem;
+    gap: 1rem;
+  }
+  
+  .reviewCard {
+    width: 40vw;
+    padding: 1.5rem;
+  }
+  
+  .avatar {
+    width: 3.5rem;
+    height: 3.5rem;
+  }
+  
+  .star {
+    width: 1.5rem;
+    height: 1.5rem;
+  }
