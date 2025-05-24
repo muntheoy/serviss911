@@ -43,6 +43,7 @@ body {
   margin: 0;
   padding: var(--page-padding-top) var(--page-padding-x) var(--page-padding-bottom);
   box-sizing: border-box;
+  overflow-x: hidden;
 }
 
 /* Контейнер для ограничения максимальной ширины */

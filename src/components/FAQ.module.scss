@@ -1,0 +1,123 @@
+@use '../styles/variables' as *;
+@use 'sass:map';
+
+.faq {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3.375rem;
+  position: relative;
+  padding: 2rem 0; // Вертикальные отступы
+  
+  // Контейнер для контента (ограничен по ширине)
+  &__content {
+    width: 100%;
+    max-width: 1200px; // Ваша максимальная ширина контента
+    padding: 0 20px;
+    position: relative;
+    z-index: 2;
+  }
+
+  // Полноэкранный фон (не ограничен контейнером)
+  &::before {
+    content: '';
+    position: absolute;
+    width: 100vw; // 100% ширины viewport
+    left: 50%;
+    transform: translateX(-50%); // Точное центрирование
+    height: 100%;
+    top: 0;
+    background-color: #132b53;
+    mask-image: url('../assets/icons/pattern.svg');
+    mask-repeat: no-repeat;
+    mask-size: cover;
+    mask-position: center;
+    z-index: -1;
+  }
+}
+
+.accordionList {
+width: 70%;
+ display: flex;
+flex-direction: column;
+}
+
+
+
+.accordionButton {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 1rem;
+  background: #FFFFFF;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-align: left;
+  border-radius: 1rem;  
+  
+  &:hover {
+    transform: scale(1.1);
+  }
+}
+
+
+.questionIcon {
+  width: 2.1rem;
+  height: 2.1rem;
+}
+
+.accordionQuestion {
+  font-family: $font-nunito;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #333;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  
+}
+
+.accordionIcon {
+  color: #555;
+  transition: transform 0.3s ease;
+  
+  &.isOpen {
+    transform: rotate(180deg);
+  }
+}
+
+.accordionPanel {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+  background: white;
+  margin-top: 0.5rem;
+  margin-bottom: 1rem;
+  border-radius: 1rem;
+  
+  &.isActive {
+    max-height: 300px;
+  }
+}
+
+.accordionAnswer {
+  padding: 20px;
+  font-family:  $font-nunito;
+  font-size: 1rem;
+  color: #222222;
+  line-height: 1.6;
+  display: flex;
+  align-items: center;
+  
+  &::before {
+    content: '';
+    display: inline-block;
+    width: 0.25rem;
+    height: 2rem;
+    background: map.get($colors, 'primary-500');
+    margin-right: 15px;
+    border-radius: 2px;
+  }
+}

@@ -2,30 +2,35 @@
 @use 'sass:map';
 
 .container {
+  height: 100%;
   display: flex;
   flex-direction: column;
   gap: 4rem;
   width: 100%;
+  position: relative; // Необходимо для позиционирования фона
 
   &WithBg {
-    position: relative;
+    // Разрешаем фону выходить за границы
+    overflow: visible;
     
-    // Маска для цвета SVG
+    // Фоновый элемент
     &::before {
       content: '';
       position: absolute;
-       width: 100vw;
-       height: 100%;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background-color: #132b53; /* Основной цвет */
+      // Центрирование по горизонтали и вертикали
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      // Размеры фона (можно настроить под ваш случай)
+      width: 120%; // Немного больше контейнера
+      height: 120%;
+      // Стили для SVG маски
+      background-color: #132b53;
       mask-image: url('../assets/icons/pattern.svg');
       mask-repeat: no-repeat;
-      mask-size: cover;
+      mask-size: contain; // Полностью вмещает изображение
       mask-position: center;
-      opacity: 0.5; /* Прозрачность */
+      opacity: 0.5;
       z-index: -1;
     }
   }
@@ -35,6 +40,7 @@
   display: flex;
   flex-direction: row;
   gap: 1rem;
+  justify-content: space-between;
 }
 
 .content {
