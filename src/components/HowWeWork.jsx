@@ -5,7 +5,7 @@ import callIcon from "../assets/icons/fluent_person-call-20-filled.svg";
 
 const HowWeWork = ({}) => {
   return (
-    <div className={styles.contanier}>
+   <div className={`${styles.container} ${styles.containerWithBg}`}>
       <BlockHeader
       showButtons = {false}
       title= {"Как мы работаем"}
