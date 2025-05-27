@@ -1,9 +1,25 @@
 import React from 'react';
 import Button from '../components/Button';
-import Peculiarity from '../components/Peculiarity';
 import { FaClock, FaBolt, FaTools } from 'react-icons/fa';
 import telegramIcon from '../assets/icons/telegram.svg';
+import keyIcon from '../assets/icons/key.svg';
 import styles from './StartBlock.module.scss';
+
+const Peculiarity = ({ 
+  icon = <img src={keyIcon} alt="" className={styles.icon} />, 
+  text 
+}) => {
+  return (
+    <div className={styles.peculiarity}>
+      <div className={styles.peculiarity__square}>
+        <div className={styles.peculiarity__icon}>
+          {icon}
+        </div>
+      </div>
+      {text && <div className={styles.peculiarity__text}>{text}</div>}
+    </div>
+  );
+};
 
 const StartBlock = () => {
   return (
