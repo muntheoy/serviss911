@@ -3,7 +3,6 @@ import HowWeWork from "./components/HowWeWork";
 import Services from "./components/Services";
 import StartBlock from "./components/StartBlock";
 import WorkExperience from "./components/WorkExperience";
-import WorkExperienceCard from "./components/WorkExperienceCard";
 import FAQ from "./components/FAQ";
 import Reviews from "./components/Reviews";
 

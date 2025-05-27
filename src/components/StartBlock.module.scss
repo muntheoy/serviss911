@@ -1,8 +1,196 @@
-@use '../styles/variables' as *;
+@use '../styles/variables' as v;
 @use 'sass:map';
 
-.contanier{
+/* === Контейнер общего блока === */
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+/* === Верхняя секция: заголовок + особенности === */
+.serviceHeader {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  background: map.get(v.$colors, 'dark-bg') url('../assets/icons/pattern.svg');
+  border-radius: 24px;
+  padding: 56px;
+  gap: 100px;
+  justify-content: baseline;
+  flex-wrap: wrap;
+}
+
+.content {
+  width: 100%;
+  max-width: 600px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: left;
+}
+
+.title {
+  font-size: 40pt;
+  color: map.get(v.$colors, 'light-bg');
+  margin-bottom: 20px;
+  font-family: v.$font-montserrat;
+}
+
+.subtitle {
+  font-size: 1.25rem;
+  color: map.get(v.$colors, 'light-bg');
+  margin-bottom: 40px;
+  line-height: 1.6;
+  font-family: v.$font-nunito;
+}
+
+.buttons {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.buttonIcon {
+  width: 20px;
+  height: 20px;
+}
+
+/* === Особенности (Peculiarity) === */
+.features {
+  width: 100%;
+  max-width: 400px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+}
+
+.peculiarity {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: map.get(v.$spacing, 'sm');
+  background-color: map.get(v.$colors, white);
+  font-family: v.$font-nunito;
+  font-size: map.get(v.$font-sizes, 'lg');
+  border-radius: 20px;
+  padding: 12px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+
+  &__square {
+    width: 50px;
+    height: 50px;
+    background: map.get(v.$colors, 'light-bg');
+    border-radius: 10px;
     display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__icon {
+    color: map.get(v.$colors, 'primary');
+    width: 36px;
+    height: 36px;
+    font-size: map.get(v.$font-sizes, 'md');
+    display: grid;
+    place-items: center;
+  }
+
+  &__text {
+    font-size: map.get(v.$font-sizes, 'lg');
+    font-weight: 500;
+    color: map.get(v.$colors, 'text');
+    text-align: left;
+  }
+}
+
+/* === Нижний блок: статистика === */
+.statsContainer {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 2rem 6rem;
+  background-color: white;
+  border-radius: 20px;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  min-width: 200px;
+}
+
+.iconWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: map.get(v.$colors, primary-500);
+  color: white;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.icon {
+  font-size: 1.5rem;
+}
+
+.textWrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.text {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #2c3e50;
+  margin-bottom: 0.2rem;
+  white-space: nowrap;
+}
+
+.subtext {
+  font-size: 0.85rem;
+  color: #7f8c8d;
+}
+
+.divider {
+  width: 1px;
+  height: 50px;
+  background-color: #ddd;
+}
+
+/* === Адаптив === */
+@media (max-width: 768px) {
+  .title {
+    font-size: 2rem;
+  }
+
+  .subtitle {
+    font-size: 1rem;
+  }
+
+  .features {
     flex-direction: column;
-    gap: 1rem;
+    align-items: center;
+  }
+
+  .buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .statsContainer {
+    flex-direction: column;
+    padding: 1rem;
+    gap: 1.5rem;
+  }
+
+  .divider {
+    display: none;
+  }
 }
