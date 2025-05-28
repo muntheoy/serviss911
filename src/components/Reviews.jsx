@@ -3,9 +3,12 @@ import React from 'react';
 import styles from './Reviews.module.scss';
 import BlockHeader from './BlockHeader';
 import photo from '../assets/icons/men.jpg';
-import starIcon from '../assets/icons/star.svg'; // Импортируем SVG как URL
+import starIcon from '../assets/icons/star.svg';
+import { useDragScroll } from '../hooks/useDragScroll';
 
 const Reviews = () => {
+  const dragRef = useDragScroll();
+
   const reviews = [
     {
       id: 1,
@@ -35,7 +38,7 @@ const Reviews = () => {
       avatar: photo,
       rating: 4
     },
-    {           
+    {
       id: 5,
       name: "Екатерина М.",
       text: "Помогли вскрыть квартиру когда ребёнок случайно закрылся изнутри. Приехали моментально, всё сделали бережно.",
@@ -44,39 +47,24 @@ const Reviews = () => {
     }
   ];
 
-     const FiveStars = () => {
-    return (
-      <div className={styles.rating}>
-        {[...Array(5)].map((_, i) => (
-          <img 
-            key={i}
-            src={starIcon} 
-            alt="Звезда" 
-            className={styles.star}
-          />
-        ))}
-      </div>
-    );
-  };
+  const FiveStars = () => (
+    <div className={styles.rating}>
+      {[...Array(5)].map((_, i) => (
+        <img key={i} src={starIcon} alt="Звезда" className={styles.star} />
+      ))}
+    </div>
+  );
 
   return (
-     <section className={styles.reviewsSection}>
-      <BlockHeader
-        showButtons={true}
-        title={"Отзывы клиентов"}
-      />
-      
-      <div className={styles.reviewsList}>
-        {reviews.map(review => (
+    <section className={styles.reviewsSection} id="reviews">
+      <BlockHeader title="Отзывы клиентов" showButtons={true} />
+      <div className={styles.reviewsList} ref={dragRef}>
+        {reviews.map((review) => (
           <div key={review.id} className={styles.reviewCard}>
             <div className={styles.avatarContainer}>
               <div className={styles.avatarLeft}>
-                <img 
-                  src={review.avatar} 
-                  alt={review.name} 
-                  className={styles.avatar}
-                />
-                <h3 className={styles.reviewName}>{review.name}</h3>  
+                <img src={review.avatar} alt={review.name} className={styles.avatar} />
+                <h3 className={styles.reviewName}>{review.name}</h3>
               </div>
               <FiveStars />
             </div>

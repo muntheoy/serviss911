@@ -1,7 +1,7 @@
 @use '../styles/variables' as *;
 @use 'sass:map';
 
-.container {
+.contanier {
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -54,14 +54,14 @@
 }
 
 .serviceName {
-  font-size: 1rem;
+  font-size: 1.25rem;
   color: map.get($colors, 'text-secondary');
   font-size: 1rem;
   font-family: $font-nunito;
 }
 
 .servicePrice {
-  font-size: 1rem;
+  font-size: 1.25rem;
   font-weight: 700;
   color: map.get($colors, 'primary-500');
   font-family: $font-nunito;

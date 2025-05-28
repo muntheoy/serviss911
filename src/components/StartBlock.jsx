@@ -1,14 +1,15 @@
 import React from "react";
 import Button from "../components/Button";
-import { FaClock, FaBolt, FaTools } from "react-icons/fa";
-import telegramIcon from "../assets/icons/telegram.svg";
+import FaTools from "react-icons/fa";
 import keyIcon from "../assets/icons/key.svg";
 import styles from "./StartBlock.module.scss";
 import { FaTelegramPlane } from "react-icons/fa";
 import { BsFillTelephoneFill } from "react-icons/bs";
+import { TbHours24 } from "react-icons/tb";
+import { FaTruckFast } from "react-icons/fa6";
 
 const Peculiarity = ({
-  icon = <img src={keyIcon} alt="" className={styles.icon} />,
+  icon = <img src={keyIcon} alt="" />,
   text,
 }) => {
   return (
@@ -28,7 +29,11 @@ const StartBlock = () => {
       <div className={styles.serviceHeader}>
         <div className={styles.content}>
           <div>
-            <h1 className={styles.title}>Вскрытие замков</h1>
+           <h1 className={styles.title}>
+  <span>Вскрытие замков</span>
+
+  <span>в Екатеринбурге</span>
+</h1>
             <p className={styles.subtitle}>
               Откроем замок любой сложности аккуратно и быстро.
               <br />
@@ -69,7 +74,7 @@ const StartBlock = () => {
       <div className={styles.statsContainer}>
         <div className={styles.item}>
           <div className={styles.iconWrapper}>
-            <FaClock className={styles.icon} />
+            <TbHours24 className={styles.icon} />
           </div>
           <div className={styles.textWrapper}>
             <div className={styles.text}>Поможем в любое время</div>
@@ -77,19 +82,15 @@ const StartBlock = () => {
           </div>
         </div>
 
-        <div className={styles.divider}></div>
-
         <div className={styles.item}>
           <div className={styles.iconWrapper}>
-            <FaBolt className={styles.icon} />
+            <FaTruckFast className={styles.icon} />
           </div>
           <div className={styles.textWrapper}>
             <div className={styles.text}>Работаем оперативно</div>
             <div className={styles.subtext}>Приезд от 15 минут</div>
           </div>
         </div>
-
-        <div className={styles.divider}></div>
 
         <div className={styles.item}>
           <div className={styles.iconWrapper}>

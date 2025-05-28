@@ -12,10 +12,8 @@
   // Контейнер для контента (ограничен по ширине)
   &__content {
     width: 100%;
-    max-width: 1200px; // Ваша максимальная ширина контента
     padding: 0 20px;
     position: relative;
-    z-index: 2;
   }
 
   // Полноэкранный фон (не ограничен контейнером)
@@ -28,6 +26,7 @@
     height: 100%;
     top: 0;
     background-color: #132b53;
+    opacity: 0.5;
     mask-image: url('../assets/icons/pattern2.svg');
     mask-repeat: no-repeat;
     mask-size: cover;

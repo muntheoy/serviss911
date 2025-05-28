@@ -1,4 +1,4 @@
-@use '../styles/variables' as v;
+@use '../styles/variables' as *;
 @use 'sass:map';
 
 /* === Контейнер общего блока === */
@@ -14,7 +14,7 @@
   width: 100%;
  display: flex;
  flex-direction: row;
-  background: map.get(v.$colors, 'dark-bg') url('../assets/icons/pattern.svg');
+  background: map.get($colors, 'dark-bg') url('../assets/icons/pattern.svg');
   border-radius: 24px;
   padding: 56px;
   gap: 100px;
@@ -32,17 +32,21 @@
 
 .title {
   font-size: 40pt;
-  color: map.get(v.$colors, 'light-bg');
+  color: map.get($colors, 'light-bg');
   margin-bottom: 20px;
-  font-family: v.$font-montserrat;
+  font-family: $font-montserrat;
+}
+
+.title span {
+  display: block;
 }
 
 .subtitle {
   font-size: 1.25rem;
-  color: map.get(v.$colors, 'light-bg');
+  color: map.get($colors, 'light-bg');
   margin-bottom: 40px;
   line-height: 1.6;
-  font-family: v.$font-nunito;
+  font-family: $font-nunito;
 }
 
 .buttons {
@@ -69,10 +73,10 @@
   width: 100%;
   display: flex;
   align-items: center;
-  gap: map.get(v.$spacing, 'sm');
-  background-color: map.get(v.$colors, white);
-  font-family: v.$font-nunito;
-  font-size: map.get(v.$font-sizes, 'lg');
+  gap: map.get($spacing, 'sm');
+  background-color: map.get($colors, white);
+  font-family: $font-nunito;
+  font-size: map.get($font-sizes, 'lg');
   border-radius: 20px;
   padding: 12px;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
@@ -80,7 +84,7 @@
   &__square {
     width: 50px;
     height: 50px;
-    background: map.get(v.$colors, 'light-bg');
+    background: map.get($colors, 'light-bg');
     border-radius: 10px;
     display: flex;
     align-items: center;
@@ -88,18 +92,18 @@
   }
 
   &__icon {
-    color: map.get(v.$colors, 'primary');
+    color: map.get($colors, 'primary');
     width: 36px;
     height: 36px;
-    font-size: map.get(v.$font-sizes, 'md');
+    font-size: map.get($font-sizes, 'md');
     display: grid;
     place-items: center;
   }
 
   &__text {
-    font-size: map.get(v.$font-sizes, 'lg');
+    font-size: map.get($font-sizes, 'lg');
     font-weight: 500;
-    color: map.get(v.$colors, 'text');
+    color: map.get($colors, 'text');
     text-align: left;
   }
 }
@@ -128,16 +132,16 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: map.get(v.$colors, primary-500);
-  color: white;
-  width: 50px;
-  height: 50px;
+  color:  map.get($colors, primary-500);
+  
   border-radius: 50%;
   flex-shrink: 0;
 }
 
 .icon {
-  font-size: 1.5rem;
+  font-size: 4rem;
+  // width: 4rem;
+  // height: 4rem;
 }
 
 .textWrapper {
@@ -146,23 +150,22 @@
 }
 
 .text {
-  font-size: 1rem;
-  font-weight: 600;
+  font-size: 1.25rem;
+  font-weight: 700;
+  font-family: $font-nunito;
   color: #2c3e50;
-  margin-bottom: 0.2rem;
+  margin-bottom: 0.25rem;
   white-space: nowrap;
 }
 
 .subtext {
-  font-size: 0.85rem;
   color: #7f8c8d;
+  font-size: 1.25rem;
+  font-weight: 400;
+  font-family: $font-nunito;
 }
 
-.divider {
-  width: 1px;
-  height: 50px;
-  background-color: #ddd;
-}
+
 
 /* === Адаптив === */
 @media (max-width: 768px) {

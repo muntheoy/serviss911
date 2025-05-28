@@ -1,13 +1,17 @@
+@use '../styles/variables' as *;
+@use 'sass:map';
+
 .header {
   position: fixed;
   display: flex;
-  justify-content: center;
   align-items: center;
-  padding: 1rem 2rem;
-  background-color: #f4f4f4;
-  border-radius: 1.5rem;
+  padding: 1rem 1rem;
+  background-color: rgba(255, 255, 255, 0.6); 
+  backdrop-filter: blur(0.5rem);
+  border-radius: 5rem;
   gap: 1rem;
-  flex: 5;
+  z-index: 1;
+  align-self: center;
 }
 
 .left {
@@ -15,11 +19,16 @@
     background-color: #1f2d3d;
     color: #fdb36d;
     font-weight: 700;
+    font-family: $font-montserrat;
     border: none;
     border-radius: 999px;
-    padding: 0.5rem 1.5rem;
+    padding: 1rem 1rem;
     font-size: 1rem;
     cursor: pointer;
+  }
+
+   &:active {
+    transform: scale(0.95);
   }
 }
 
@@ -34,14 +43,20 @@
     background: none;
     border: none;
     font-size: 1rem;
+    font-family: $font-nunito;
     cursor: pointer;
     padding: 0.5rem 1rem;
-    border-radius: 999px;
+    border-radius: 1000rem;
     transition: background 0.3s;
 
     &:hover {
-      background-color: #f1f1f1;
+      background-color: map.get($colors, 'secondary-500');
+      color: white;
     }
+
+      &:active {
+    transform: scale(0.95);
+  }
 
     &.active {
       background-color: #1f2d3d;

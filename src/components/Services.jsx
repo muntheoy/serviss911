@@ -37,7 +37,7 @@ const servicesData = [
 
 const Services = () => {
   return (
-    <div className={`${styles.container} ${styles.containerWithBg}`}>
+    <div className={styles.contanier}>
       <BlockHeader showButtons={true} title="Услуги" />
       <div className={styles.cards}>
         {servicesData.map((section, index) => (

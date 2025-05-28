@@ -45,10 +45,11 @@ const ContactsBlock = ({
 
         <div className={styles.mapWrapper}>
           <YMaps>
-            <Map
-              defaultState={{ center: coordinates, zoom: 16 }}
-           
-            >
+           <Map
+  defaultState={{ center: coordinates, zoom: 16 }}
+  width="100%"
+  height="100%"
+>
               <Placemark
                 geometry={coordinates}
                 options={{

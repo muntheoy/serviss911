@@ -6,7 +6,7 @@ import BlockHeader from "./BlockHeader";
 const AboutUsBlock = () => {
   return (
     <section className={styles.aboutContainer}>
-       <BlockHeader showButtons={false} title="Контакты" />
+       <BlockHeader showButtons={false} title="О нас" />
       <div className={styles.content}>
        
         <div className={styles.description}>

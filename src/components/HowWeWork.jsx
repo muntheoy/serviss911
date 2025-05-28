@@ -42,7 +42,7 @@ const steps = [
 
 const HowWeWork = () => {
   return (
-    <div className={`${styles.container} ${styles.containerWithBg}`}>
+    <div className={styles.container}>
       <BlockHeader showButtons={false} title="Как мы работаем" />
       <div className={styles.content}>
         {steps.map((step, index) => (
@@ -79,7 +79,7 @@ const RequestCard = ({
         <div className={styles.buttons}>
           <Button
             variant="icon"
-            color="blue"  
+            color="blue"
             icon={<FaTelegramPlane />}
             ariaLabel="Позвонить"
             onClick={() => console.log("Звонок")}
@@ -87,20 +87,19 @@ const RequestCard = ({
 
           <Button
             variant="icon"
-            color="primary-500"  
+            color="primary-500"
             icon={<PiChatCircleDotsFill />}
             ariaLabel="Позвонить"
             onClick={() => console.log("Звонок")}
           />
 
-<Button
+          <Button
             variant="icon"
-            color="secondary-500"  
+            color="secondary-500"
             icon={<BsFillTelephoneFill />}
             ariaLabel="Позвонить"
             onClick={() => console.log("Звонок")}
           />
-
         </div>
       )}
     </div>

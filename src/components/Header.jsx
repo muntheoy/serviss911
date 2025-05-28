@@ -1,5 +1,6 @@
 import styles from './Header.module.scss';
 import { FaPhone, FaTelegramPlane } from 'react-icons/fa';
+import Button from "./Button";
 
 const sections = [
   { id: 'services', label: 'Услуги' },
@@ -14,8 +15,10 @@ const sections = [
 export default function Header() {
   const handleScroll = (id) => {
   const element = document.getElementById(id);
-  if (element) {
-    const offset = -100; // поднимаем на 100px выше
+  const header = document.querySelector(`.${styles.header}`);
+
+  if (element && header) {
+    const offset = -header.offsetHeight - 60; 
     const y = element.getBoundingClientRect().top + window.pageYOffset + offset;
 
     window.scrollTo({
@@ -24,7 +27,6 @@ export default function Header() {
     });
   }
 };
-
   return (
     <header className={styles.header}>
       <div className={styles.left}>
@@ -46,13 +48,23 @@ export default function Header() {
       </nav>
 
       <div className={styles.right}>
-        <button className={`${styles.iconButton} ${styles.telegram}`}>
-          <FaTelegramPlane />
-        </button>
-        <button className={styles.callButton}>
-          <FaPhone />
-          <span>+7 800 555-35-35</span>
-        </button>
+        <Button
+            variant="icon"
+            color="blue"
+            icon={<FaTelegramPlane />}
+            ariaLabel="Позвонить"
+            onClick={() => console.log("Звонок")}
+          />
+          <Button
+            variant="filled"
+            color="primary-500"
+            icon={<FaPhone />}
+            ariaLabel="Позвонить"
+            onClick={() => console.log("Звонок")}
+          >
+            +7 800 555-35-35
+            </Button>
+
       </div>
     </header>
   );

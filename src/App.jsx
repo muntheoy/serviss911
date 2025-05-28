@@ -8,25 +8,8 @@ import Reviews from "./components/Reviews";
 import ContactsBlock from "./components/ContactsBlock";
 import AboutUsBlock from "./components/AboutUs";
 import Header from "./components/Header";
+import Footer from "./components/Footer";
 
- const mechanismsData = [
-    {
-      title: "CISA (Италия)",
-      description: "Высоконадежные замки с защитой от взлома и перепикирования"
-    },
-    {
-      title: "KALE (Турция)",
-      description: "Доступные и качественные системы для металлических дверей"
-    },
-    {
-      title: "MOTTURA (Италия)",
-      description: "Премиальные замки с многоуровневой защитой"
-    },
-    {
-      title: "ABLOY (Финляндия)",
-      description: "Инновационные дисковые механизмы высокой секретности"
-    }
-  ];
 
 function App() {
   return (
@@ -64,6 +47,7 @@ function App() {
       <section id="contacts">
         <ContactsBlock />
       </section>
+      <Footer/>
     </div>
   );
 }

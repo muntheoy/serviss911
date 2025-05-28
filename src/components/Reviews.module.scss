@@ -23,7 +23,8 @@
 }
 
 .reviewCard {
-  width: 100%;
+   flex: 0 0 28rem; // фиксированная ширина карточки (примерно 448px)
+  max-width: 90vw;
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
@@ -31,7 +32,6 @@
   border-radius: 1rem;
   padding: 2rem;
   transition: transform 0.3s ease;
-  width: 300pt; 
 }
 
 .avatarContainer {
