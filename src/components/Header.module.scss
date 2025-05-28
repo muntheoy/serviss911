@@ -1,0 +1,85 @@
+.header {
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: #f4f4f4;
+  border-radius: 1.5rem;
+  gap: 1rem;
+  flex: 5;
+}
+
+.left {
+  .logoButton {
+    background-color: #1f2d3d;
+    color: #fdb36d;
+    font-weight: 700;
+    border: none;
+    border-radius: 999px;
+    padding: 0.5rem 1.5rem;
+    font-size: 1rem;
+    cursor: pointer;
+  }
+}
+
+.nav {
+  display: flex;
+  gap: 1.5rem;
+  background-color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 999px;
+
+  .navItem {
+    background: none;
+    border: none;
+    font-size: 1rem;
+    cursor: pointer;
+    padding: 0.5rem 1rem;
+    border-radius: 999px;
+    transition: background 0.3s;
+
+    &:hover {
+      background-color: #f1f1f1;
+    }
+
+    &.active {
+      background-color: #1f2d3d;
+      color: white;
+    }
+  }
+}
+
+.right {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+
+  .iconButton {
+    background-color: #27a7e7;
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 1rem;
+    cursor: pointer;
+  }
+
+  .callButton {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background-color: #fdb36d;
+    border: none;
+    border-radius: 999px;
+    padding: 0.5rem 1rem;
+    color: white;
+    font-weight: 700;
+    font-size: 1rem;
+    cursor: pointer;
+  }
+}

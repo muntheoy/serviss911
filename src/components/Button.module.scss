@@ -4,226 +4,153 @@
 .button {
   display: inline-flex;
   align-items: center;
-  justify-content: center; 
-  padding: 1.5rem 1rem;
+  justify-content: center;
+  padding: 1rem 1.5rem;
   border-radius: 100px;
-  font-weight: 600;
-  cursor: pointer;
-  transition: all 0.3s;
-  gap: 8px;
-  text-align: center; // Центрирование текста
-  vertical-align: middle; // Выравнивание по вертикали
-  line-height: 1; // Единый межстрочный интервал
-
   font-family: 'Montserrat', sans-serif;
   font-weight: 700;
   font-size: map-get($font-sizes, md);
+  gap: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: none;
 
-  /* Иконки внутри кнопок */
-  .icon-left,
-  .icon-right {
-    width: 1rem;
-    height: 1rem;
+  .iconLeft,
+  .iconRight {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    flex-shrink: 0; // Предотвращает сжатие иконок
+    width: 1rem;
+    height: 1rem;
+    flex-shrink: 0;
   }
 
+  // Sizes
+  &.small {
+    padding: 0.5rem 1rem;
+    font-size: map-get($font-sizes, sm);
 
-  /* Filled button variants */
+    .iconLeft, .iconRight {
+      width: 0.75rem;
+      height: 0.75rem;
+    }
+  }
+
+  &.large {
+    padding: 1.25rem 2rem;
+    font-size: map-get($font-sizes, lg);
+
+    .iconLeft, .iconRight {
+      width: 1.25rem;
+      height: 1.25rem;
+    }
+  }
+
+  // Variants
   &.filled {
-    background-color: map-get($colors, primary-500);  
+    background-color: map-get($colors, primary-500);
     color: white;
-    border: none;
 
     &:hover {
       background-color: map-get($colors, primary-400);
-      transform: scale(1.1);
+      transform: scale(1.05);
     }
-    
+
     &:active {
       background-color: map-get($colors, primary-600);
       transform: scale(0.95);
-      box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.2);
     }
   }
 
-  /* Outlined button variants */
   &.outlined {
     background-color: transparent;
     color: map-get($colors, primary-500);
-    border: 3px solid map-get($colors, primary-500);
+    border: 2px solid map-get($colors, primary-500);
 
     &:hover {
-      background-color: map-get($colors, primary-100) ;
-      color: map-get($colors, primary-500);
-      transform: scale(1.1);
+      background-color: map-get($colors, primary-100);
+      transform: scale(1.05);
     }
-    
+
     &:active {
       background-color: map-get($colors, primary-600);
-      color: map-get($colors, white);
+      color: white;
       transform: scale(0.95);
     }
   }
 
-  /* Text button variant */
   &.text {
     background-color: transparent;
     color: map-get($colors, primary-500);
-    border: none;
-    padding: 10px 12px; // Уменьшенные отступы для текстовой кнопки
+    padding: 0.5rem 0.75rem;
 
     &:hover {
-      background-color: map-get($colors, primary-400);
+      background-color: map-get($colors, primary-100);
     }
-    
+
     &:active {
-      background-color: map-get($colors, primary-600);
+      background-color: map-get($colors, primary-200);
     }
   }
 
-  /* Icon button - base styles */
-  &.icon {
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
-    padding: 10px;
+  &.iconOnly {
     border-radius: 50%;
     width: 40px;
     height: 40px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    
+    padding: 0;
+    justify-content: center;
+
     svg, i {
       width: 20px;
       height: 20px;
-      display: flex;
-      margin: 0 auto; // Центрирование иконки
-    }
-
-    /* Default icon button */
-    &:not(.outlined):not(.text) {
-      background-color: map-get($colors, primary-500);
-      color: map-get($colors, white);
-      border: none;
-
-      &:hover {
-        background-color: map-get($colors, primary-400);
-        transform: scale(1.1);
-      }
-      
-      &:active {
-        background-color: map-get($colors, primary-600);
-        transform: scale(0.9);
-        box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.2);
-      }
-    }
-
-    /* Outlined icon button */
-    &.outlined {
-      background-color: transparent;
-      color: map-get($colors, primary);
-      border: 2px solid map-get($colors, primary-500);
-
-      &:hover {
-        background-color: map-get($colors, primary-400);
-        color: map-get($colors, white);
-        transform: scale(1.1);
-      }
-      
-      &:active {
-        background-color: map-get($colors, primary-600);
-        transform: scale(0.9);
-        box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
-      }
-    }
-
-    /* Text icon button (minimal) */
-    &.text {
-      background-color: transparent;
-      color: map-get($colors, primary-500);
-      border: none;
-
-      &:hover {
-        background-color: rgba(map-get($colors, primary-400), 0.1);
-        transform: scale(1.1);
-      }
-      
-      &:active {
-        background-color: rgba(map-get($colors, primary-600), 0.2);
-        transform: scale(0.9);
-      }
-    }
-
-    /* Color variants for icon buttons */
-    @each $name, $color in $colors {
-      &.#{$name} {
-        &:not(.outlined):not(.text) {
-          background-color: $color;
-          color: color.scale($color, $lightness: -70%);
-
-          &:hover {
-            background-color: color.scale($color, $lightness: -10%);
-          }
-          
-          &:active {
-            background-color: color.scale($color, $lightness: -20%);
-          }
-        }
-
-        &.outlined {
-          color: $color;
-          border-color: $color;
-
-          &:hover {
-            background-color: $color;
-            color: color.scale($color, $lightness: -70%);
-          }
-          
-          &:active {
-            background-color: color.scale($color, $lightness: -10%);
-          }
-        }
-
-        &.text {
-          color: $color;
-
-          &:hover {
-            background-color: rgba($color, 0.1);
-          }
-          
-          &:active {
-            background-color: rgba($color, 0.2);
-          }
-        }
-      }
-    }
-
-    /* Sizes for icon buttons */
-    &.small {
-      width: 32px;
-      height: 32px;
-      
-      svg, i {
-        width: 16px;
-        height: 16px;
-      }
-    }
-
-    &.large {
-      width: 48px;
-      height: 48px;
-      
-      svg, i {
-        width: 24px;
-        height: 24px;
-      }
     }
   }
 
-  /* Disabled state for all buttons */
+  // Color variants (like .blue, .red etc.)
+  @each $name, $color in $colors {
+  &.#{$name}.iconOnly {
+    background-color: $color;
+    color: white;
+
+    &:hover {
+      background-color: color.scale($color, $lightness: -10%);
+      transform: scale(1.05);
+    }
+
+    &:active {
+      background-color: color.scale($color, $lightness: -20%);
+      transform: scale(0.95);
+    }
+  }
+
+  &.#{$name}.iconOnly.outlined {
+    background-color: transparent;
+    border: 2px solid $color;
+    color: $color;
+
+    &:hover {
+      background-color: rgba($color, 0.1);
+    }
+
+    &:active {
+      background-color: rgba($color, 0.2);
+    }
+  }
+
+  &.#{$name}.iconOnly.text {
+    background-color: transparent;
+    color: white;
+
+    &:hover {
+      background-color: rgba($color, 0.1);
+    }
+
+    &:active {
+      background-color: rgba($color, 0.2);
+    }
+  }
+}
+
   &:disabled {
     opacity: 0.6;
     cursor: not-allowed;

@@ -23,9 +23,7 @@
 }
 
 .reviewCard {
-  flex: 0 0 auto;
-  width: 500px;
-  min-width: 500px;
+  width: 100%;
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
@@ -33,9 +31,7 @@
   border-radius: 1rem;
   padding: 2rem;
   transition: transform 0.3s ease;
-
-  
-  
+  width: 300pt; 
 }
 
 .avatarContainer {

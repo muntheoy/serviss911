@@ -5,6 +5,9 @@ import StartBlock from "./components/StartBlock";
 import WorkExperience from "./components/WorkExperience";
 import FAQ from "./components/FAQ";
 import Reviews from "./components/Reviews";
+import ContactsBlock from "./components/ContactsBlock";
+import AboutUsBlock from "./components/AboutUs";
+import Header from "./components/Header";
 
  const mechanismsData = [
     {
@@ -28,12 +31,39 @@ import Reviews from "./components/Reviews";
 function App() {
   return (
     <div className="app">
-      <StartBlock/>
-    <Services/>
-    <HowWeWork/>
-    <WorkExperience/>
-    <FAQ/>
-    <Reviews/>
+      <Header />
+      
+      <section id="start" style={{ scrollMarginTop: "120px", paddingTop: "120px" }}>
+        <StartBlock />
+      </section>
+
+      <section id="services">
+        <Services />
+      </section>
+
+      <section id="how">
+        <HowWeWork />
+      </section>
+
+      <section id="about">
+        <AboutUsBlock />
+      </section>
+
+      <section id="experience">
+        <WorkExperience />
+      </section>
+
+      <section id="faq">
+        <FAQ />
+      </section>
+
+      <section id="reviews">
+        <Reviews />
+      </section>
+
+      <section id="contacts">
+        <ContactsBlock />
+      </section>
     </div>
   );
 }

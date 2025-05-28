@@ -1,20 +1,20 @@
-import React from 'react';
-import Button from '../components/Button';
-import { FaClock, FaBolt, FaTools } from 'react-icons/fa';
-import telegramIcon from '../assets/icons/telegram.svg';
-import keyIcon from '../assets/icons/key.svg';
-import styles from './StartBlock.module.scss';
+import React from "react";
+import Button from "../components/Button";
+import { FaClock, FaBolt, FaTools } from "react-icons/fa";
+import telegramIcon from "../assets/icons/telegram.svg";
+import keyIcon from "../assets/icons/key.svg";
+import styles from "./StartBlock.module.scss";
+import { FaTelegramPlane } from "react-icons/fa";
+import { BsFillTelephoneFill } from "react-icons/bs";
 
-const Peculiarity = ({ 
-  icon = <img src={keyIcon} alt="" className={styles.icon} />, 
-  text 
+const Peculiarity = ({
+  icon = <img src={keyIcon} alt="" className={styles.icon} />,
+  text,
 }) => {
   return (
     <div className={styles.peculiarity}>
       <div className={styles.peculiarity__square}>
-        <div className={styles.peculiarity__icon}>
-          {icon}
-        </div>
+        <div className={styles.peculiarity__icon}>{icon}</div>
       </div>
       {text && <div className={styles.peculiarity__text}>{text}</div>}
     </div>
@@ -30,7 +30,8 @@ const StartBlock = () => {
           <div>
             <h1 className={styles.title}>Вскрытие замков</h1>
             <p className={styles.subtitle}>
-              Откроем замок любой сложности аккуратно и быстро.<br />
+              Откроем замок любой сложности аккуратно и быстро.
+              <br />
               Мы — ваш надежный выбор.
             </p>
           </div>
@@ -38,18 +39,21 @@ const StartBlock = () => {
           <div className={styles.buttons}>
             <Button
               variant="outlined"
-              icon={<img src={telegramIcon} alt="Telegram" className={styles.buttonIcon} />}
-              onClick={() => window.open('https://t.me/your_telegram', '_blank')}
+              icon={<FaTelegramPlane />}
+              ariaLabel="Позвонить"
+              color="blue"
             >
               Написать в Telegram
-            </Button>
+              </Button>
 
             <Button
               variant="filled"
-              onClick={() => window.location.href = 'tel:+79991234567'}
+              icon={< BsFillTelephoneFill />}
+              ariaLabel="Позвонить"
+              color="blue"
             >
               Позвонить
-            </Button>
+              </Button>
           </div>
         </div>
 

@@ -5,25 +5,44 @@
   width: 100%;
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+  gap: 3.375rem;
+  background-size: 100% 100%;
+  overflow: visible;
 }
 
 .containerWithBg {
-  background-color: map-get($colors, 'background-gray');
-  padding: 2rem;
-  border-radius: 2rem;
+  position: relative;
+  z-index: 0;
+
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100vw;
+    background-image: url('../assets/icons/pattern2.svg');
+    background-repeat: repeat-x;
+    background-size: 100% auto;
+    background-position: top center;
+    z-index: -1;
+    pointer-events: none;
+    display: block;
+    min-height: 100%;
+  }
 }
 
+
+
 .content {
+  width: 100%;
   display: flex;
-  flex-wrap: wrap;
-  gap: 2rem;
+  gap: 1rem;
   justify-content: center;
 }
 
 .card {
   width: 100%;
-  max-width: 320px;
   display: flex;
   flex-direction: column;
   position: relative;

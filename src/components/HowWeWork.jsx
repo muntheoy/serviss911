@@ -1,9 +1,13 @@
 import React from "react";
 import styles from "./HowWeWork.module.scss";
-import BlockHeader from './BlockHeader';
+import BlockHeader from "./BlockHeader";
 import { FiMessageSquare, FiPhone } from "react-icons/fi";
 import callIcon from "../assets/icons/fluent_person-call-20-filled.svg";
 import Button from "./Button";
+import bgPattern from "../assets/icons/pattern.svg";
+import { FaTelegramPlane } from "react-icons/fa";
+import { BsFillTelephoneFill } from "react-icons/bs";
+import { PiChatCircleDotsFill } from "react-icons/pi";
 
 const steps = [
   {
@@ -11,29 +15,29 @@ const steps = [
     icon: <img src={callIcon} alt="Иконка звонка" className="card-icon" />,
     title: "Оставляете заявку",
     description: "На сайте в чате, по телефону или в Telegram",
-    showButtons: true
+    showButtons: true,
   },
   {
     stepNumber: 2,
     icon: <img src={callIcon} alt="Иконка звонка" />,
     title: "Консультация",
     description: "Наш специалист свяжется с вами",
-    showButtons: false
+    showButtons: false,
   },
   {
     stepNumber: 3,
     icon: <img src={callIcon} alt="Иконка звонка" />,
     title: "Выезд мастера",
     description: "Специалист выезжает в течение 30 минут",
-    showButtons: false
+    showButtons: false,
   },
   {
     stepNumber: 4,
     icon: <img src={callIcon} alt="Иконка звонка" />,
     title: "Выполнение работы",
     description: "Вскрытие, ремонт или замена замка — по ситуации",
-    showButtons: false
-  }
+    showButtons: false,
+  },
 ];
 
 const HowWeWork = () => {
@@ -61,7 +65,7 @@ const RequestCard = ({
   icon = <FiMessageSquare size={24} />,
   title = "Оставляете заявку",
   description = "На сайте в чате, по телефону или в Telegram",
-  showButtons = true
+  showButtons = true,
 }) => {
   return (
     <div className={styles.card}>
@@ -73,9 +77,30 @@ const RequestCard = ({
       </div>
       {showButtons && (
         <div className={styles.buttons}>
-          <Button variant="icon" icon={<FiPhone />} className="primary" ariaLabel="Позвонить" />
-          <Button variant="icon" icon={<FiPhone />} className="primary" ariaLabel="Позвонить" />
-          <Button variant="icon" icon={<FiPhone />} className="primary" ariaLabel="Позвонить" />
+          <Button
+            variant="icon"
+            color="blue"  
+            icon={<FaTelegramPlane />}
+            ariaLabel="Позвонить"
+            onClick={() => console.log("Звонок")}
+          />
+
+          <Button
+            variant="icon"
+            color="primary-500"  
+            icon={<PiChatCircleDotsFill />}
+            ariaLabel="Позвонить"
+            onClick={() => console.log("Звонок")}
+          />
+
+<Button
+            variant="icon"
+            color="secondary-500"  
+            icon={<BsFillTelephoneFill />}
+            ariaLabel="Позвонить"
+            onClick={() => console.log("Звонок")}
+          />
+
         </div>
       )}
     </div>

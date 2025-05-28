@@ -37,7 +37,7 @@ const servicesData = [
 
 const Services = () => {
   return (
-    <div className={styles.container}>
+    <div className={`${styles.container} ${styles.containerWithBg}`}>
       <BlockHeader showButtons={true} title="Услуги" />
       <div className={styles.cards}>
         {servicesData.map((section, index) => (
@@ -67,9 +67,7 @@ const ServiceSection = ({ title, services, icon }) => (
             <p className={styles.serviceName}>{service.name}</p>
             <p className={styles.servicePrice}>{service.price}</p>
           </div>
-          {index < services.length - 1 && (
-            <div className={styles.divider} />
-          )}
+          {index < services.length - 1 && <div className={styles.divider} />}
         </React.Fragment>
       ))}
     </div>
