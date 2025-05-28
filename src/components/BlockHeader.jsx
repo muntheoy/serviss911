@@ -1,7 +1,6 @@
 import styles from "./BlockHeader.module.scss";
 import Button from "./Button";
 import { BsFillTelephoneFill } from "react-icons/bs";
-import { FiMessageSquare, FiPhone, FiSend } from "react-icons/fi";
 
 const BlockHeader = ({ showButtons = true, title = "Оставляете заявку" }) => {
   return (

@@ -8,10 +8,7 @@ import { BsFillTelephoneFill } from "react-icons/bs";
 import { TbHours24 } from "react-icons/tb";
 import { FaTruckFast } from "react-icons/fa6";
 
-const Peculiarity = ({
-  icon = <img src={keyIcon} alt="" />,
-  text,
-}) => {
+const Peculiarity = ({ icon = <img src={keyIcon} alt="" />, text }) => {
   return (
     <div className={styles.peculiarity}>
       <div className={styles.peculiarity__square}>
@@ -29,11 +26,11 @@ const StartBlock = () => {
       <div className={styles.serviceHeader}>
         <div className={styles.content}>
           <div>
-           <h1 className={styles.title}>
-  <span>Вскрытие замков</span>
+            <h1 className={styles.title}>
+              <span>Вскрытие замков</span>
 
-  <span>в Екатеринбурге</span>
-</h1>
+              <span>в Екатеринбурге</span>
+            </h1>
             <p className={styles.subtitle}>
               Откроем замок любой сложности аккуратно и быстро.
               <br />
@@ -49,16 +46,16 @@ const StartBlock = () => {
               color="blue"
             >
               Написать в Telegram
-              </Button>
+            </Button>
 
             <Button
               variant="filled"
-              icon={< BsFillTelephoneFill />}
+              icon={<BsFillTelephoneFill />}
               ariaLabel="Позвонить"
               color="blue"
             >
               Позвонить
-              </Button>
+            </Button>
           </div>
         </div>
 

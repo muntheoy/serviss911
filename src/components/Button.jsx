@@ -1,15 +1,14 @@
-import React from 'react';
 import styles from './Button.module.scss';
 
 const Button = ({
   children,
-  variant = 'filled',         // 'filled' | 'outlined' | 'text' | 'icon'
-  icon,                       // React-элемент (например, <FiPhone />)
-  iconPosition = 'left',      // 'left' | 'right'
+  variant = 'filled',         
+  icon,                      
+  iconPosition = 'left',      
   onClick,
-  ariaLabel,                  // для кнопки-иконки
-  color,                      // цветовая тема (например, 'blue')
-  size = 'default',           // 'small' | 'default' | 'large'
+  ariaLabel,                 
+  color,                      
+  size = 'default',           
 }) => {
   const isIconOnly = variant === 'icon';
 

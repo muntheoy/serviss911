@@ -1,4 +1,3 @@
-import React from "react";
 import styles from "./AboutUsBlock.module.scss";
 import locksmithImage from "../assets/img/lockmaster.png"; 
 import BlockHeader from "./BlockHeader";

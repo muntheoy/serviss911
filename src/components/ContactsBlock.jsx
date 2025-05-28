@@ -1,4 +1,3 @@
-import React from "react";
 import { YMaps, Map, Placemark } from "@pbe/react-yandex-maps";
 import { FaPhone, FaMapMarkerAlt, FaTelegramPlane } from "react-icons/fa";
 import styles from "./ContactsBlock.module.scss";
@@ -45,11 +44,11 @@ const ContactsBlock = ({
 
         <div className={styles.mapWrapper}>
           <YMaps>
-           <Map
-  defaultState={{ center: coordinates, zoom: 16 }}
-  width="100%"
-  height="100%"
->
+            <Map
+              defaultState={{ center: coordinates, zoom: 16 }}
+              width="100%"
+              height="100%"
+            >
               <Placemark
                 geometry={coordinates}
                 options={{
