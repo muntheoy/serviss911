@@ -1,12 +1,13 @@
 import React from "react";
 import Button from "../components/Button";
-import FaTools from "react-icons/fa";
 import keyIcon from "../assets/icons/key.svg";
 import styles from "./StartBlock.module.scss";
-import { FaTelegramPlane } from "react-icons/fa";
 import { BsFillTelephoneFill } from "react-icons/bs";
 import { TbHours24 } from "react-icons/tb";
 import { FaTruckFast } from "react-icons/fa6";
+import { FaPhone, FaTelegramPlane } from "react-icons/fa";
+import { FaTools } from "react-icons/fa";
+import { LINKS } from '../config/links';
 
 const Peculiarity = ({ icon = <img src={keyIcon} alt="" />, text }) => {
   return (
@@ -39,14 +40,16 @@ const StartBlock = () => {
           </div>
 
           <div className={styles.buttons}>
-            <Button
-              variant="outlined"
-              icon={<FaTelegramPlane />}
-              ariaLabel="Позвонить"
-              color="blue"
-            >
-              Написать в Telegram
-            </Button>
+            <a href={LINKS.telegram.url} target="_blank" rel="noopener noreferrer">
+  <Button
+    variant="outlined"
+    icon={<FaTelegramPlane />}
+    ariaLabel="Написать в Telegram"
+    color="blue"
+  >
+    Написать в Telegram
+  </Button>
+</a>
 
             <Button
               variant="filled"
