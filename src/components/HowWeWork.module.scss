@@ -84,9 +84,9 @@
 }
 
 .icon {
-  font-size: 32px;
-  color: #3b82f6;
-  margin-bottom: 0.5rem;
+  font-size: 4rem;
+  color: map-get($colors, secondary-500);
+  
 }
 
 .title {

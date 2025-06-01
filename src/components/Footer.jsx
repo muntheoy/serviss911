@@ -1,12 +1,12 @@
 import styles from './Footer.module.scss';
+import { FOOTER_TEXT } from '../texts'; // путь может отличаться
 
 export default function Footer() {
   return (
     <div className={styles.footerWrapper}>
       <footer className={styles.footer}>
         <p>
-          © 2025, «М-zamok». Все права защищены. Использование любых материалов,
-          размещённых на сайте, разрешается при условии ссылки на <em>m-zamok.ru</em>
+          {FOOTER_TEXT.copyright} <em>{FOOTER_TEXT.site}</em>
         </p>
       </footer>
     </div>

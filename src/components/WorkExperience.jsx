@@ -1,34 +1,21 @@
 import React from 'react';
 import styles from './WorkExperience.module.scss';
 import BlockHeader from './BlockHeader';
-
-const mechanismsData = [
-  {
-    title: "CISA (Италия)",
-    description: "Высоконадежные замки с защитой от взлома и перепикирования"
-  },
-  {
-    title: "KALE (Турция)",
-    description: "Доступные и качественные системы для металлических дверей"
-  },
-  {
-    title: "MOTTURA (Италия)",
-    description: "Премиальные замки с многоуровневой защитой"
-  },
-  {
-    title: "ABLOY (Финляндия)",
-    description: "Инновационные дисковые механизмы высокой секретности"
-  }
-];
+import { WORK_EXPERIENCE_TEXT } from '../texts'; 
+import { BsFillTelephoneFill } from "react-icons/bs";
 
 const WorkExperience = () => {
   return (
     <div className={styles.container}>
-      <BlockHeader showButtons={true} title="Опыт работы" />
+      <BlockHeader showButtons={false} title={WORK_EXPERIENCE_TEXT.title} />
       <div className={styles.cards}>
-        <ExperienceCard mainTitle="Цилиндровые механизмы" mechanisms={mechanismsData} />
-        <ExperienceCard mainTitle="Цилиндровые механизмы" mechanisms={mechanismsData} />
-        <ExperienceCard mainTitle="Цилиндровые механизмы" mechanisms={mechanismsData} />
+        {WORK_EXPERIENCE_TEXT.cards.map((card, index) => (
+          <ExperienceCard
+            key={index}
+            mainTitle={card.mainTitle}
+            mechanisms={card.mechanisms}
+          />
+        ))}
       </div>
     </div>
   );

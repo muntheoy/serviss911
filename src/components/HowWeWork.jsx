@@ -1,55 +1,35 @@
 import React from "react";
 import styles from "./HowWeWork.module.scss";
 import BlockHeader from "./BlockHeader";
-import { FiMessageSquare, FiPhone } from "react-icons/fi";
-import callIcon from "../assets/icons/fluent_person-call-20-filled.svg";
 import Button from "./Button";
-import bgPattern from "../assets/icons/pattern.svg";
 import { FaTelegramPlane } from "react-icons/fa";
 import { BsFillTelephoneFill } from "react-icons/bs";
 import { PiChatCircleDotsFill } from "react-icons/pi";
+import { HiOutlineWrenchScrewdriver } from "react-icons/hi2";
+import { HOW_WE_WORK_TEXT } from "../texts";
+import { FaShippingFast } from "react-icons/fa";
+import { FaLockOpen } from "react-icons/fa6";
+import { LINKS } from "../config/links";
 
-const steps = [
-  {
-    stepNumber: 1,
-    icon: <img src={callIcon} alt="Иконка звонка" className="card-icon" />,
-    title: "Оставляете заявку",
-    description: "На сайте в чате, по телефону или в Telegram",
-    showButtons: true,
-  },
-  {
-    stepNumber: 2,
-    icon: <img src={callIcon} alt="Иконка звонка" />,
-    title: "Консультация",
-    description: "Наш специалист свяжется с вами",
-    showButtons: false,
-  },
-  {
-    stepNumber: 3,
-    icon: <img src={callIcon} alt="Иконка звонка" />,
-    title: "Выезд мастера",
-    description: "Специалист выезжает в течение 30 минут",
-    showButtons: false,
-  },
-  {
-    stepNumber: 4,
-    icon: <img src={callIcon} alt="Иконка звонка" />,
-    title: "Выполнение работы",
-    description: "Вскрытие, ремонт или замена замка — по ситуации",
-    showButtons: false,
-  },
+
+// Массив иконок по порядку шагов
+const stepIcons = [
+  <BsFillTelephoneFill key="1" />,
+  <PiChatCircleDotsFill key="2" />,
+  <FaShippingFast key="3" />,
+  <FaLockOpen key="4" />,
 ];
 
 const HowWeWork = () => {
   return (
     <div className={styles.container}>
-      <BlockHeader showButtons={false} title="Как мы работаем" />
+      <BlockHeader showButtons={false} title={HOW_WE_WORK_TEXT.title} />
       <div className={styles.content}>
-        {steps.map((step, index) => (
+        {HOW_WE_WORK_TEXT.steps.map((step, index) => (
           <RequestCard
             key={index}
             stepNumber={step.stepNumber}
-            icon={step.icon}
+            icon={stepIcons[index]} // 👈 иконка берётся здесь
             title={step.title}
             description={step.description}
             showButtons={step.showButtons}
@@ -61,11 +41,11 @@ const HowWeWork = () => {
 };
 
 const RequestCard = ({
-  stepNumber = 1,
-  icon = <FiMessageSquare size={24} />,
-  title = "Оставляете заявку",
-  description = "На сайте в чате, по телефону или в Telegram",
-  showButtons = true,
+  stepNumber,
+  icon,
+  title,
+  description,
+  showButtons,
 }) => {
   return (
     <div className={styles.card}>
@@ -77,29 +57,41 @@ const RequestCard = ({
       </div>
       {showButtons && (
         <div className={styles.buttons}>
-          <Button
+           <a
+                        href={LINKS.telegram.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <Button
             variant="icon"
             color="blue"
             icon={<FaTelegramPlane />}
-            ariaLabel="Позвонить"
-            onClick={() => console.log("Звонок")}
+            ariaLabel={HOW_WE_WORK_TEXT.buttonAriaLabel}
+            onClick={() => console.log("Telegram")}
           />
-
+                      </a>
+          
           <Button
             variant="icon"
             color="primary-500"
             icon={<PiChatCircleDotsFill />}
-            ariaLabel="Позвонить"
-            onClick={() => console.log("Звонок")}
+            ariaLabel={HOW_WE_WORK_TEXT.buttonAriaLabel}
+            onClick={() => console.log("Чат")}
           />
-
-          <Button
+          <a
+                        href={LINKS.phone.whatsapp}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                         <Button
             variant="icon"
             color="secondary-500"
             icon={<BsFillTelephoneFill />}
-            ariaLabel="Позвонить"
+            ariaLabel={HOW_WE_WORK_TEXT.buttonAriaLabel}
             onClick={() => console.log("Звонок")}
           />
+                      </a>
+         
         </div>
       )}
     </div>

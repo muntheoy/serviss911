@@ -60,7 +60,7 @@
   height: 20px;
 }
 
-/* === Особенности (Peculiarity) === */
+
 .features {
   width: 100%;
   max-width: 40%;
@@ -76,10 +76,9 @@
   gap: map.get($spacing, 'sm');
   background-color: map.get($colors, white);
   font-family: $font-nunito;
-  font-size: map.get($font-sizes, 'lg');
-  border-radius: 20px;
-  padding: 12px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  font-size: 1rem;
+  border-radius: 1rem;  
+  padding: 0.5rem;
 
   &__square {
     width: 50px;
@@ -101,8 +100,8 @@
   }
 
   &__text {
-    font-size: map.get($font-sizes, 'lg');
-    font-weight: 500;
+    font-size: 1.25rem;
+    font-weight: 600;
     color: map.get($colors, 'text');
     text-align: left;
   }

@@ -7,7 +7,7 @@ import { TbHours24 } from "react-icons/tb";
 import { FaTruckFast } from "react-icons/fa6";
 import { FaPhone, FaTelegramPlane } from "react-icons/fa";
 import { FaTools } from "react-icons/fa";
-import { LINKS } from '../config/links';
+import { LINKS } from "../config/links";
 
 const Peculiarity = ({ icon = <img src={keyIcon} alt="" />, text }) => {
   return (
@@ -40,25 +40,35 @@ const StartBlock = () => {
           </div>
 
           <div className={styles.buttons}>
-            <a href={LINKS.telegram.url} target="_blank" rel="noopener noreferrer">
-  <Button
-    variant="outlined"
-    icon={<FaTelegramPlane />}
-    ariaLabel="Написать в Telegram"
-    color="blue"
-  >
-    Написать в Telegram
-  </Button>
-</a>
-
-            <Button
-              variant="filled"
-              icon={<BsFillTelephoneFill />}
-              ariaLabel="Позвонить"
-              color="blue"
+            <a
+              href={LINKS.telegram.url}
+              target="_blank"
+              rel="noopener noreferrer"
             >
-              Позвонить
-            </Button>
+              <Button
+                variant="outlined"
+                icon={<FaTelegramPlane />}
+                ariaLabel="Написать в Telegram"
+                color="blue"
+              >
+                Написать в Telegram
+              </Button>
+            </a>
+
+            <a
+              href={LINKS.phone.whatsapp}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Button
+                variant="filled"
+                icon={<BsFillTelephoneFill />}
+                ariaLabel="Позвонить"
+                color="blue"
+              >
+                Позвонить
+              </Button>
+            </a>
           </div>
         </div>
 

@@ -7,22 +7,22 @@
   align-items: center;
   gap: 3.375rem;
   position: relative;
-  padding: 2rem 0; // Вертикальные отступы
+  padding: 2rem 0; 
   
-  // Контейнер для контента (ограничен по ширине)
+ 
   &__content {
     width: 100%;
     padding: 0 20px;
     position: relative;
   }
 
-  // Полноэкранный фон (не ограничен контейнером)
+  
   &::before {
     content: '';
     position: absolute;
-    width: 100vw; // 100% ширины viewport
+    width: 100vw; 
     left: 50%;
-    transform: translateX(-50%); // Точное центрирование
+    transform: translateX(-50%); 
     height: 100%;
     top: 0;
     background-color: #132b53;
@@ -104,11 +104,12 @@ flex-direction: column;
 .accordionAnswer {
   padding: 20px;
   font-family:  $font-nunito;
-  font-size: 1rem;
+  font-size: 1.25rem;
   color: #222222;
   line-height: 1.6;
   display: flex;
   align-items: center;
+  line-height: 120%;
   
   &::before {
     content: '';

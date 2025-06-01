@@ -1,4 +1,4 @@
-const basePhoneNumber = "+78005553535";
+const basePhoneNumber = "+79937898233";
 const baseTelegramHandle = "@LockServiceNovosibirsk";
 
 // Можно добавить UTM-метки как параметры

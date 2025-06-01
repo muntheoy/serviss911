@@ -2,22 +2,30 @@ import { YMaps, Map, Placemark } from "@pbe/react-yandex-maps";
 import { FaPhone, FaMapMarkerAlt, FaTelegramPlane } from "react-icons/fa";
 import styles from "./ContactsBlock.module.scss";
 import BlockHeader from "./BlockHeader";
+import { CONTACTS_TEXT } from "../texts";
+import { BsFillTelephoneFill } from "react-icons/bs";
 
-const ContactsBlock = ({
-  coordinates = [55.030199, 73.269487],
-  address = "г. Новосибирск, ул. Красный проспект, д. 12, офис 5",
-  phone = "+7 800 555-35-35",
-  telegram = "@LockServiceNovosibirsk",
-}) => {
+const ContactsBlock = () => {
+  const {
+    title,
+    phoneLabel,
+    addressLabel,
+    telegramLabel,
+    phone,
+    address,
+    telegram,
+    coordinates,
+  } = CONTACTS_TEXT;
+
   return (
     <div className={styles.container}>
-      <BlockHeader showButtons={false} title="Контакты" />
+      <BlockHeader showButtons={false} title={title} />
       <div className={styles.content}>
         <div className={styles.info}>
           <div className={styles.row}>
-            <FaPhone className={styles.icon} />
+            <BsFillTelephoneFill className={styles.icon} />
             <div>
-              <strong>Телефон</strong>
+              <strong>{phoneLabel}</strong>
               <br />
               <span>{phone}</span>
             </div>
@@ -26,7 +34,7 @@ const ContactsBlock = ({
           <div className={styles.row}>
             <FaMapMarkerAlt className={styles.icon} />
             <div>
-              <strong>Адрес</strong>
+              <strong>{addressLabel}</strong>
               <br />
               <span>{address}</span>
             </div>
@@ -35,7 +43,7 @@ const ContactsBlock = ({
           <div className={styles.row}>
             <FaTelegramPlane className={styles.icon} />
             <div>
-              <strong>Telegram</strong>
+              <strong>{telegramLabel}</strong>
               <br />
               <span>{telegram}</span>
             </div>
@@ -52,7 +60,7 @@ const ContactsBlock = ({
               <Placemark
                 geometry={coordinates}
                 options={{
-                  iconColor: "#2A3F54", // Цвет пина — например, красный
+                  iconColor: "#2A3F54",
                 }}
               />
             </Map>
