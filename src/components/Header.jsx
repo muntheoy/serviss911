@@ -68,7 +68,9 @@ export default function Header() {
             ariaLabel={HEADER_TEXT.ariaLabelCall}
             onClick={() => console.log("Звонок")}
           >
-            {HEADER_TEXT.phoneNumber}
+            <span className={styles.phoneNumberText}>
+              {HEADER_TEXT.phoneNumber}
+            </span>
           </Button>
         </a>
       </div>

@@ -14,4 +14,5 @@ export const LINKS = {
     handle: baseTelegramHandle,
     url: `https://t.me/muhyrlagod`,
   },
+  mapId: "3Ab3c64f9ed7c443066bcbd40a4845ff63e69fe683ea34e6494e993264ec3ced00",
 };

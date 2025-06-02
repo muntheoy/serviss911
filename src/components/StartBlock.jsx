@@ -1,13 +1,8 @@
-import React from "react";
-import Button from "../components/Button";
-import keyIcon from "../assets/icons/key.svg";
-import styles from "./StartBlock.module.scss";
-import { BsFillTelephoneFill } from "react-icons/bs";
-import { TbHours24 } from "react-icons/tb";
-import { FaTruckFast } from "react-icons/fa6";
-import { FaPhone, FaTelegramPlane } from "react-icons/fa";
-import { FaTools } from "react-icons/fa";
-import { LINKS } from "../config/links";
+import React from 'react';
+import Button from './Button';
+import styles from './StartBlock.module.scss';
+import telegramIcon from '../assets/icons/telegram.svg';
+import { FaClock, FaBolt, FaTools } from 'react-icons/fa';
 
 const Peculiarity = ({ icon = <img src={keyIcon} alt="" />, text }) => {
   return (
@@ -22,56 +17,36 @@ const Peculiarity = ({ icon = <img src={keyIcon} alt="" />, text }) => {
 
 const StartBlock = () => {
   return (
-    <div className={styles.container}>
-      {/* Service Header */}
-      <div className={styles.serviceHeader}>
+    <div className={styles.combinedContainer}>
+      {/* Верхний блок (бывший ServiceHeader) */}
+      <div className={styles.serviceBlock}>
         <div className={styles.content}>
           <div>
-            <h1 className={styles.title}>
-              <span>Вскрытие замков</span>
-
-              <span>в Екатеринбурге</span>
-            </h1>
+            <h1 className={styles.title}>Вскрытие замков</h1>
             <p className={styles.subtitle}>
-              Откроем замок любой сложности аккуратно и быстро.
-              <br />
+              Откроем замок любой сложности аккуратно и быстро.<br />
               Мы — ваш надежный выбор.
-            </p>
+            </p>    
           </div>
 
           <div className={styles.buttons}>
-            <a
-              href={LINKS.telegram.url}
-              target="_blank"
-              rel="noopener noreferrer"
+            <Button 
+              variant="outlined" 
+              icon={<img src={telegramIcon} alt="Telegram" className={styles.buttonIcon} />}
+              onClick={() => window.open('https://t.me/your_telegram', '_blank')}
             >
-              <Button
-                variant="outlined"
-                icon={<FaTelegramPlane />}
-                ariaLabel="Написать в Telegram"
-                color="blue"
-              >
-                Написать в Telegram
-              </Button>
-            </a>
-
-            <a
-              href={LINKS.phone.whatsapp}
-              target="_blank"
-              rel="noopener noreferrer"
+              Написать в Telegram
+            </Button>
+            
+            <Button 
+              variant="filled"
+              onClick={() => window.location.href = 'tel:+79991234567'}
             >
-              <Button
-                variant="filled"
-                icon={<BsFillTelephoneFill />}
-                ariaLabel="Позвонить"
-                color="blue"
-              >
-                Позвонить
-              </Button>
-            </a>
+              Позвонить
+            </Button>
           </div>
         </div>
-
+        
         <div className={styles.features}>
           <Peculiarity text="Любая сложность" />
           <Peculiarity text="Без повреждений" />
@@ -80,28 +55,32 @@ const StartBlock = () => {
         </div>
       </div>
 
-      {/* Stats */}
-      <div className={styles.statsContainer}>
+      {/* Нижний блок (бывший Stats) */}
+      <div className={styles.statsBlock}>
         <div className={styles.item}>
           <div className={styles.iconWrapper}>
-            <TbHours24 className={styles.icon} />
+            <FaClock className={styles.icon} />
           </div>
           <div className={styles.textWrapper}>
             <div className={styles.text}>Поможем в любое время</div>
             <div className={styles.subtext}>Работаем 24/7</div>
           </div>
         </div>
-
+        
+        <div className={styles.divider}></div>
+        
         <div className={styles.item}>
           <div className={styles.iconWrapper}>
-            <FaTruckFast className={styles.icon} />
+            <FaBolt className={styles.icon} />
           </div>
           <div className={styles.textWrapper}>
             <div className={styles.text}>Работаем оперативно</div>
             <div className={styles.subtext}>Приезд от 15 минут</div>
           </div>
         </div>
-
+        
+        <div className={styles.divider}></div>
+        
         <div className={styles.item}>
           <div className={styles.iconWrapper}>
             <FaTools className={styles.icon} />

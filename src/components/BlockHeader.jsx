@@ -19,6 +19,7 @@ const BlockHeader = ({ showButtons = true, title = "Оставляете зая�
               icon={<BsFillTelephoneFill />}
               ariaLabel="Позвонить"
               color="blue"
+              className={styles.serviceCallButton}
             >
               Позвонить
             </Button>

@@ -36,7 +36,7 @@
 }
 
 .row strong {
-  font-size: 2rem;
+  font-size: 1.1rem;
   font-weight: 700;
   color: #2c3e50;
   font-family: $font-montserrat;
@@ -46,6 +46,7 @@
 .row span{
   font-family: $font-nunito;
   font-weight: 700;
+  font-size: 0.9rem;
 }
 
 .icon {
@@ -61,4 +62,40 @@
   border-radius: 1rem;
   overflow: hidden;
   flex-grow: 1;
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 1.5rem 1rem;
+    gap: 1.5rem;
+    border-radius: 1rem;
+  }
+
+  .content {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .info {
+    width: 100%;
+    gap: 1rem;
+  }
+
+  .row strong {
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .mapWrapper {
+    height: 300px;
+    border-radius: 1rem;
+  }
+
+  .row{
+    font-size: 1rem;
+  }
+
+  .row span{
+    font-size: 1rem;
+  }
 }

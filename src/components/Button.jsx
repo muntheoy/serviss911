@@ -9,6 +9,7 @@ const Button = ({
   ariaLabel,                 
   color,                      
   size = 'default',           
+  className = '',
 }) => {
   const isIconOnly = variant === 'icon';
 
@@ -18,7 +19,8 @@ const Button = ({
     color ? styles[color] : '',
     isIconOnly ? styles.iconOnly : '',
     size !== 'default' ? styles[size] : '',
-  ].join(' ');
+    className,
+  ].filter(Boolean).join(' ');
 
   return (
     <button

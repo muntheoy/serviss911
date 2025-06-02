@@ -1,9 +1,10 @@
-import { YMaps, Map, Placemark } from "@pbe/react-yandex-maps";
+import React, { useState, useEffect } from "react";
 import { FaPhone, FaMapMarkerAlt, FaTelegramPlane } from "react-icons/fa";
 import styles from "./ContactsBlock.module.scss";
 import BlockHeader from "./BlockHeader";
 import { CONTACTS_TEXT } from "../texts";
 import { BsFillTelephoneFill } from "react-icons/bs";
+import { LINKS } from "../config/links";
 
 const ContactsBlock = () => {
   const {
@@ -14,8 +15,26 @@ const ContactsBlock = () => {
     phone,
     address,
     telegram,
-    coordinates,
   } = CONTACTS_TEXT;
+
+  const mapId = LINKS.mapId;
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+
+    handleResize();
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
+  const mapSrc = `https://yandex.ru/map-widget/v1/?um=constructor%3A${mapId}&amp;source=constructor`;
+  const mapWidth = isMobile ? "100%" : "900";
 
   return (
     <div className={styles.container}>
@@ -51,20 +70,12 @@ const ContactsBlock = () => {
         </div>
 
         <div className={styles.mapWrapper}>
-          <YMaps>
-            <Map
-              defaultState={{ center: coordinates, zoom: 16 }}
-              width="100%"
-              height="100%"
-            >
-              <Placemark
-                geometry={coordinates}
-                options={{
-                  iconColor: "#2A3F54",
-                }}
-              />
-            </Map>
-          </YMaps>
+          <iframe
+            src={mapSrc}
+            width={mapWidth}
+            height="450"
+            frameborder="0"
+          ></iframe>
         </div>
       </div>
     </div>

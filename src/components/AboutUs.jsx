@@ -1,24 +1,34 @@
-import styles from "./AboutUsBlock.module.scss";
-import locksmithImage from "../assets/img/lockmaster.png"; 
-import BlockHeader from "./BlockHeader";
-import { ABOUT_US_TEXT } from "../texts"; // или '../constants/texts'
+// Reviews.jsx
+import React from 'react';
+import styles from './AboutUs.module.scss';
+import BlockHeader from './BlockHeader';
+import aboutUsImage from '../assets/icons/img.png';
 
-const AboutUsBlock = () => {
+const AboutUs = () => {
+  
   return (
-    <section className={styles.aboutContainer}>
-      <BlockHeader showButtons={false} title={ABOUT_US_TEXT.title} />
-      <div className={styles.content}>
-        <div className={styles.description}>
-          {ABOUT_US_TEXT.paragraphs.map((text, index) => (
-            <p key={index}>{text}</p>
-          ))}
+     <div className={styles.container}>
+      <BlockHeader
+        showButtons={false}
+        title={"О нас"}
+      />
+      <div className={styles.contnt}>
+        <div className={styles.text}>
+            <p>Мы — команда профессиональных мастеров по замкам с богатым опытом работы в сфере замочных систем и безопасности. Мы быстро и без повреждений решаем любые проблемы с замками. Нас выбирают не только жители города, но и такие организации, как МЧС и МВД, благодаря нашему профессионализму и надежности.
+
+Мы гордимся тем, что за годы работы завоевали доверие множества клиентов благодаря нашему профессионализму, оперативности и индивидуальному подходу к каждой ситуации</p>
         </div>
-        <div className={styles.imageWrapper}>
-          <img src={locksmithImage} alt={ABOUT_US_TEXT.imageAlt} />
-        </div>
+        <img 
+            src={aboutUsImage} 
+            alt="Наша команда" 
+            className={styles.image}
+          />
+
+
       </div>
-    </section>
+     
+    </div>
   );
 };
 
-export default AboutUsBlock;
+export default AboutUs;

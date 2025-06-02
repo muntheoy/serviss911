@@ -1,12 +1,9 @@
-
-
 .aboutContainer {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   gap: 3.375rem;
 }
-
 
 .content {
   display: flex;
@@ -38,5 +35,42 @@
     height: 100%;
     border-radius: 16px;
     object-fit: cover;
+  }
+}
+
+@media (max-width: 768px) {
+  .aboutContainer {
+    gap: 1.5rem; /* Уменьшаем отступ между элементами контейнера */
+  }
+
+  .content {
+    flex-direction: column; /* Элементы располагаются вертикально */
+    gap: 1rem; /* Уменьшаем отступ между текстовым блоком и изображением */
+    width: 100%; /* Убираем ограничение ширины здесь */
+    margin: 0; /* Убираем центрирование здесь */
+  }
+
+  .description {
+    flex: none; /* Убираем flex-grow */
+    width: calc(100% + 2rem); /* Расширяем блок с учетом отступов */
+    font-size: 1rem; /* Устанавливаем стандартный размер основного текста */
+    padding: 1rem; /* Корректируем отступы */
+    border-radius: 1rem; /* Уменьшаем скругление */
+    position: relative;
+    left: -1rem;
+    right: -1rem;
+    /* Removed conflicting padding-left: -2rem; */
+  }
+
+  .imageWrapper {
+    flex: none; /* Убираем flex-grow */
+    width: calc(100% + 2rem); /* Расширяем блок с учетом отступов */
+    position: relative;
+    left: -1rem;
+    right: -1rem;
+
+    img {
+      border-radius: 1rem; /* Уменьшаем скругление */
+    }
   }
 }

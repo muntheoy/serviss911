@@ -121,3 +121,22 @@ flex-direction: column;
     border-radius: 2px;
   }
 }
+
+@media (max-width: 768px) {
+  .faq__content {
+    padding: 0 1rem;
+  }
+
+  .accordionList {
+    width: 110%;
+    margin: 0;
+  }
+
+  .accordionAnswer{
+    font-size: 1rem;
+  }
+
+  .accordionQuestion{
+    font-size: 1.1rem;
+  }
+}
