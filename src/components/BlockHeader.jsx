@@ -2,8 +2,18 @@ import styles from "./BlockHeader.module.scss";
 import Button from "./Button";
 import { BsFillTelephoneFill } from "react-icons/bs";
 import { LINKS } from "../config/links";
+import { trackButtonClick } from "../utils/metrics";
 
 const BlockHeader = ({ showButtons = true, title = "Оставляете заявку" }) => {
+  const handlePhoneClick = () => {
+    trackButtonClick(
+      'Позвонить',
+      'phone_button',
+      LINKS.phone.whatsapp,
+      'header'
+    );
+  };
+
   return (
     <div className={styles.container}>
       <p>{title}</p>
@@ -13,6 +23,7 @@ const BlockHeader = ({ showButtons = true, title = "Оставляете зая�
             href={LINKS.phone.whatsapp}
             target="_blank"
             rel="noopener noreferrer"
+            onClick={handlePhoneClick}
           >
             <Button
               variant="filled"

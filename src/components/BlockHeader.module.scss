@@ -17,3 +17,10 @@
 .button{
     
 }
+
+@media screen and (max-width: 768px) {
+  .container p {
+    font-size: 1.5rem;
+    text-align: left;
+  }
+}

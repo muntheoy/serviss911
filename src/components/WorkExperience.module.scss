@@ -51,3 +51,32 @@
   font-size: 1rem;
   line-height: 120%;
 }
+
+@media only screen and (max-width: 768px) {
+  .cards {
+    flex-direction: column;
+    gap: 1.5rem;;
+  }
+
+  .mechanismsGrid {
+    border-radius: 1.25rem;
+  }
+
+  .container {
+    gap: 1.25rem;
+  }
+
+  .mainTitle {
+    font-size: 1.25rem;
+    padding: 1rem;
+    border-radius: 1.25rem;
+  }
+
+  .cardTitle {
+    font-size: 1rem;
+  }
+
+  .cardDescription {
+    font-size: 0.75rem;
+  }
+}

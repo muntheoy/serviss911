@@ -1,4 +1,4 @@
-@use '../styles/variables' as *;
+@use '../styles/_variables' as *;
 @use 'sass:map';
 
 .header {
@@ -12,6 +12,7 @@
   gap: 1rem;
   z-index: 1;
   align-self: center;
+  top: 1rem;
 }
 
 .left {
@@ -70,6 +71,10 @@
   align-items: center;
   gap: 0.75rem;
 
+  a {
+    text-decoration: none;
+  }
+
   .iconButton {
     background-color: #27a7e7;
     border: none;
@@ -85,16 +90,81 @@
   }
 
   .callButton {
+    min-height: 3rem;
     display: flex;
     align-items: center;
     gap: 0.5rem;
-    background-color: #fdb36d;
+    background-color: #E6954E !important;
     border: none;
     border-radius: 999px;
-    padding: 0.5rem 1rem;
+    padding: 0.875rem 1.25rem;
     color: white;
     font-weight: 700;
     font-size: 1rem;
     cursor: pointer;
+
+    /* Скрываем текстовое содержимое в мобильной версии */
+    & > :not(:first-child) {
+      display: none;
+    }
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .header {
+    align-self: center !important;
+    top: 0;
+    padding: 1rem;
+    border-radius: 1rem;
+    gap: 5rem;
+  }
+
+  .nav {
+    display: none;
+  }
+
+  .right {
+    a {
+      text-decoration: none;
+    }
+  }
+
+  .callButton {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #E6954E !important;
+    border: none;
+    border-radius: 999px;
+    padding: 0.5rem 0.8rem !important;
+    color: white;
+    font-weight: 700;
+    font-size: 0.75rem !important;
+    cursor: pointer;
+    text-decoration: none;
+
+    /* Скрываем все содержимое кнопки по умолчанию */
+    & > * {
+      display: none;
+    }
+
+    /* Показываем только первый дочерний элемент (иконку) */
+    & > :first-child {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      /* Устанавливаем размер иконки как у иконки Telegram */
+      svg,
+      i {
+        width: 1.5rem;
+        height: 1.5rem;
+      }
+    }
+  }
+
+  /* Добавляем стили для логотипа в мобильной версии */
+  .left .logoButton {
+    white-space: nowrap; /* Запрещаем перенос текста */
   }
 }

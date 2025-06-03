@@ -1,13 +1,28 @@
 import React from 'react';
 import styles from './Reviews.module.scss';
 import BlockHeader from './BlockHeader';
-import photo from '../assets/icons/men.jpg';
-import starIcon from '../assets/icons/star.svg';
 import { useDragScroll } from '../hooks/useDragScroll';
-import { REVIEWS_TEXT } from '../texts'; // путь подкорректируй при необходимости
+import { REVIEWS_TEXT } from '../texts';
+
+// Импортируем фотографии для отзывов
+import photo1 from '../assets/img/reviews/1.jpg';
+import photo2 from '../assets/img/reviews/2.jpg';
+import photo3 from '../assets/img/reviews/3.jpg';
+import photo4 from '../assets/img/reviews/5.jpg';
+import photo5 from '../assets/img/reviews/4.jpg';
+import starIcon from '../assets/icons/star.svg';
 
 const Reviews = () => {
   const dragRef = useDragScroll();
+
+  // Объект с фотографиями для каждого отзыва
+  const reviewPhotos = {
+    1: photo1,
+    2: photo2,
+    3: photo3,
+    4: photo4,
+    5: photo5
+  };
 
   const FiveStars = ({ count }) => (
     <div className={styles.rating}>
@@ -25,7 +40,11 @@ const Reviews = () => {
           <div key={review.id} className={styles.reviewCard}>
             <div className={styles.avatarContainer}>
               <div className={styles.avatarLeft}>
-                <img src={photo} alt={review.name} className={styles.avatar} />
+                <img 
+                  src={reviewPhotos[review.id]} 
+                  alt={review.name} 
+                  className={styles.avatar} 
+                />
                 <h3 className={styles.reviewName}>{review.name}</h3>
               </div>
               <FiveStars count={review.rating} />

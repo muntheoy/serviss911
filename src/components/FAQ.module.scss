@@ -97,7 +97,7 @@ flex-direction: column;
   border-radius: 1rem;
   
   &.isActive {
-    max-height: 300px;
+    max-height: 1000px;
   }
 }
 
@@ -119,5 +119,46 @@ flex-direction: column;
     background: map.get($colors, 'primary-500');
     margin-right: 15px;
     border-radius: 2px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .accordionList {
+    width: 100%;
+    gap: 0rem;
+  }
+
+  .accordionPanel {
+    margin-top: 0.25rem;
+    margin-bottom: 0.25rem;
+  }
+
+  .faq{
+    gap: 1.25rem;
+  }
+
+  .accordionQuestion {
+    font-size: 1.1rem;
+  }
+
+  .accordionAnswer {
+    padding: 1rem;
+    font-size: 1rem;
+  }
+
+  /* Отключаем все анимации на мобильных устройствах */
+  .accordionButton {
+    transition: none;
+    &:hover {
+      transform: none;
+    }
+  }
+
+  .accordionIcon {
+    transition: none;
+  }
+
+  .accordionPanel {
+    transition: none !important;
   }
 }

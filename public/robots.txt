@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://omsk112.ru/sitemap.xml 

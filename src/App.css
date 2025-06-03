@@ -1,22 +1,16 @@
-
-
 #root {
   max-width: 1920px;
   display: flex;
   flex-direction: column;
-  /* padding: 56px 150px; */
-  
 }
 
-.app{
+.app {
   display: flex;
   flex-direction: column;
   gap: 8rem;
-  /* align-items: center; */
-
 }
 
-.content{
+.content {
   width: 100%;
   display: flex;
   flex-direction: row;
@@ -59,3 +53,33 @@
 .read-the-docs {
   color: #888;
 }
+
+@media screen and (max-width: 768px) {
+  #root {
+    padding: 0;
+  }
+
+  .app {
+    gap: 4rem;
+  }
+
+  .content {
+    flex-direction: column;
+    padding: 0 1rem;
+  }
+
+  .logo {
+    height: 4em;
+    padding: 1em;
+  }
+
+  #start {
+    scroll-margin-top: 0px;
+    padding-top: 4rem;
+  }
+}
+#start {
+  scroll-margin-top: 120px;
+  padding-top: 120px;
+}
+

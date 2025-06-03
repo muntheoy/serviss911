@@ -1,8 +1,8 @@
-const basePhoneNumber = "+79937898233";
-const baseTelegramHandle = "@LockServiceNovosibirsk";
+const basePhoneNumber = "+79999999999";
+const baseTelegramHandle = "@LockServiceOmsk";
 
-// Можно добавить UTM-метки как параметры
-const utmParams = "utm_source=site&utm_medium=button&utm_campaign=cta";
+// UTM-метки для Омска
+const utmParams = "utm_source=site&utm_medium=button&utm_campaign=omsk";
 
 export const LINKS = {
   phone: {
@@ -12,6 +12,8 @@ export const LINKS = {
   },
   telegram: {
     handle: baseTelegramHandle,
-    url: `https://t.me/muhyrlagod`,
+    url: "https://t.me/zamkovbot?start=omsk",
   },
+  yandexMapId: "3Ab3c64f9ed7c443066bcbd40a4845ff63e69fe683ea34e6494e993264ec3ced00",
+  yandexMetricaId: "101686254",
 };

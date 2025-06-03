@@ -4,8 +4,23 @@ import Button from "./Button";
 import { HEADER_TEXT } from "../texts";
 import { BsFillTelephoneFill } from "react-icons/bs";
 import { LINKS } from "../config/links";
+import { useState, useEffect } from "react";
 
 export default function Header() {
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+
+    handleResize();
+
+    window.addEventListener('resize', handleResize);
+
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
   const handleScroll = (id) => {
     const element = document.getElementById(id);
     const header = document.querySelector(`.${styles.header}`);
@@ -66,9 +81,9 @@ export default function Header() {
             color="primary-500"
             icon={<BsFillTelephoneFill />}
             ariaLabel={HEADER_TEXT.ariaLabelCall}
-            onClick={() => console.log("Звонок")}
+            className={styles.callButton}
           >
-            {HEADER_TEXT.phoneNumber}
+            {!isMobile && HEADER_TEXT.phoneNumber}
           </Button>
         </a>
       </div>

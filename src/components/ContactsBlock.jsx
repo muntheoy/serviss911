@@ -4,6 +4,8 @@ import styles from "./ContactsBlock.module.scss";
 import BlockHeader from "./BlockHeader";
 import { CONTACTS_TEXT } from "../texts";
 import { BsFillTelephoneFill } from "react-icons/bs";
+import { LINKS } from "../config/links";
+import { trackButtonClick } from "../utils/metrics";
 
 const ContactsBlock = () => {
   const {
@@ -13,9 +15,17 @@ const ContactsBlock = () => {
     telegramLabel,
     phone,
     address,
-    telegram,
     coordinates,
   } = CONTACTS_TEXT;
+
+  const handleTelegramClick = () => {
+    trackButtonClick(
+      LINKS.telegram.handle,
+      'telegram_link',
+      LINKS.telegram.url,
+      'contacts'
+    );
+  };
 
   return (
     <div className={styles.container}>
@@ -45,26 +55,21 @@ const ContactsBlock = () => {
             <div>
               <strong>{telegramLabel}</strong>
               <br />
-              <span>{telegram}</span>
+              <a 
+                href={LINKS.telegram.url} 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className={styles.telegramLink}
+                onClick={handleTelegramClick}
+              >
+                {LINKS.telegram.handle}
+              </a>
             </div>
           </div>
         </div>
 
         <div className={styles.mapWrapper}>
-          <YMaps>
-            <Map
-              defaultState={{ center: coordinates, zoom: 16 }}
-              width="100%"
-              height="100%"
-            >
-              <Placemark
-                geometry={coordinates}
-                options={{
-                  iconColor: "#2A3F54",
-                }}
-              />
-            </Map>
-          </YMaps>
+          <iframe src={`https://yandex.ru/map-widget/v1/?um=constructor%${LINKS.yandexMapId}&amp;source=constructor`} width="100%" height="100%" frameBorder="0"></iframe>
         </div>
       </div>
     </div>

@@ -19,3 +19,17 @@
   border-top-left-radius: 1rem;
   border-top-right-radius: 1rem;
 }
+
+@media screen and (max-width: 768px) {
+  .footer {
+    padding: 1rem 1.5rem;
+    text-align: right;
+    font-size: 0.75rem;
+  }
+
+  .footerWrapper {
+    border-radius: 1.25rem;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+}
