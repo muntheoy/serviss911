@@ -16,7 +16,7 @@ function App() {
     <div className="app">
       <Header />
       
-      <section id="start" style={{ scrollMarginTop: "120px", paddingTop: "120px" }}>
+      <section id="start">
         <StartBlock />
       </section>
 

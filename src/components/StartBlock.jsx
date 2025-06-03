@@ -1,5 +1,5 @@
 import React from "react";
-import Button from "../components/Button";
+import Button from "./Button";
 import keyIcon from "../assets/icons/key.svg";
 import styles from "./StartBlock.module.scss";
 import { BsFillTelephoneFill } from "react-icons/bs";
@@ -8,6 +8,7 @@ import { FaTruckFast } from "react-icons/fa6";
 import { FaPhone, FaTelegramPlane } from "react-icons/fa";
 import { FaTools } from "react-icons/fa";
 import { LINKS } from "../config/links";
+import { trackButtonClick } from "../utils/metrics";
 
 const Peculiarity = ({ icon = <img src={keyIcon} alt="" />, text }) => {
   return (
@@ -21,6 +22,24 @@ const Peculiarity = ({ icon = <img src={keyIcon} alt="" />, text }) => {
 };
 
 const StartBlock = () => {
+  const handlePhoneClick = () => {
+    trackButtonClick(
+      'Позвонить',
+      'phone_button',
+      LINKS.phone.whatsapp,
+      'start'
+    );
+  };
+
+  const handleTelegramClick = () => {
+    trackButtonClick(
+      'Написать в Telegram',
+      'telegram_button',
+      LINKS.telegram.url,
+      'start'
+    );
+  };
+
   return (
     <div className={styles.container}>
       {/* Service Header */}
@@ -30,35 +49,21 @@ const StartBlock = () => {
             <h1 className={styles.title}>
               <span>Вскрытие замков</span>
 
-              <span>в Екатеринбурге</span>
+              <span>в Омске</span>
             </h1>
             <p className={styles.subtitle}>
               Откроем замок любой сложности аккуратно и быстро.
-              <br />
               Мы — ваш надежный выбор.
             </p>
           </div>
 
           <div className={styles.buttons}>
             <a
-              href={LINKS.telegram.url}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <Button
-                variant="outlined"
-                icon={<FaTelegramPlane />}
-                ariaLabel="Написать в Telegram"
-                color="blue"
-              >
-                Написать в Telegram
-              </Button>
-            </a>
-
-            <a
               href={LINKS.phone.whatsapp}
               target="_blank"
               rel="noopener noreferrer"
+              className={styles.phoneButton}
+              onClick={handlePhoneClick}
             >
               <Button
                 variant="filled"
@@ -67,6 +72,23 @@ const StartBlock = () => {
                 color="blue"
               >
                 Позвонить
+              </Button>
+            </a>
+
+            <a
+              href={LINKS.telegram.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={styles.telegramButton}
+              onClick={handleTelegramClick}
+            >
+              <Button
+                variant="outlined"
+                icon={<FaTelegramPlane />}
+                ariaLabel="Написать в Telegram"
+                color="blue"
+              >
+                Написать в Telegram
               </Button>
             </a>
           </div>

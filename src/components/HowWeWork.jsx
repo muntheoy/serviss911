@@ -10,7 +10,7 @@ import { HOW_WE_WORK_TEXT } from "../texts";
 import { FaShippingFast } from "react-icons/fa";
 import { FaLockOpen } from "react-icons/fa6";
 import { LINKS } from "../config/links";
-
+import { trackButtonClick } from "../utils/metrics";
 
 // Массив иконок по порядку шагов
 const stepIcons = [
@@ -29,7 +29,7 @@ const HowWeWork = () => {
           <RequestCard
             key={index}
             stepNumber={step.stepNumber}
-            icon={stepIcons[index]} // 👈 иконка берётся здесь
+            icon={stepIcons[index]}
             title={step.title}
             description={step.description}
             showButtons={step.showButtons}
@@ -47,6 +47,33 @@ const RequestCard = ({
   description,
   showButtons,
 }) => {
+  const handleTelegramClick = () => {
+    trackButtonClick(
+      'Telegram',
+      'telegram_button',
+      LINKS.telegram.url,
+      'how_we_work'
+    );
+  };
+
+  const handleChatClick = () => {
+    trackButtonClick(
+      'Чат',
+      'chat_button',
+      null,
+      'how_we_work'
+    );
+  };
+
+  const handlePhoneClick = () => {
+    trackButtonClick(
+      'Звонок',
+      'phone_button',
+      LINKS.phone.whatsapp,
+      'how_we_work'
+    );
+  };
+
   return (
     <div className={styles.card}>
       <div className={styles.stepIndicator}>{stepNumber}</div>
@@ -57,41 +84,40 @@ const RequestCard = ({
       </div>
       {showButtons && (
         <div className={styles.buttons}>
-           <a
-                        href={LINKS.telegram.url}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                        <Button
-            variant="icon"
-            color="blue"
-            icon={<FaTelegramPlane />}
-            ariaLabel={HOW_WE_WORK_TEXT.buttonAriaLabel}
-            onClick={() => console.log("Telegram")}
-          />
-                      </a>
+          <a
+            href={LINKS.telegram.url}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <Button
+              variant="icon"
+              color="blue"
+              icon={<FaTelegramPlane />}
+              ariaLabel={HOW_WE_WORK_TEXT.buttonAriaLabel}
+              onClick={handleTelegramClick}
+            />
+          </a>
           
           <Button
             variant="icon"
             color="primary-500"
             icon={<PiChatCircleDotsFill />}
             ariaLabel={HOW_WE_WORK_TEXT.buttonAriaLabel}
-            onClick={() => console.log("Чат")}
+            onClick={handleChatClick}
           />
           <a
-                        href={LINKS.phone.whatsapp}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                         <Button
-            variant="icon"
-            color="secondary-500"
-            icon={<BsFillTelephoneFill />}
-            ariaLabel={HOW_WE_WORK_TEXT.buttonAriaLabel}
-            onClick={() => console.log("Звонок")}
-          />
-                      </a>
-         
+            href={LINKS.phone.whatsapp}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <Button
+              variant="icon"
+              color="secondary-500"
+              icon={<BsFillTelephoneFill />}
+              ariaLabel={HOW_WE_WORK_TEXT.buttonAriaLabel}
+              onClick={handlePhoneClick}
+            />
+          </a>
         </div>
       )}
     </div>

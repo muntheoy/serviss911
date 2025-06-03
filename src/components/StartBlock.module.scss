@@ -1,4 +1,4 @@
-@use '../styles/variables' as *;
+@use '../styles/_variables' as *;
 @use 'sass:map';
 
 /* === Контейнер общего блока === */
@@ -12,8 +12,8 @@
 /* === Верхняя секция: заголовок + особенности === */
 .serviceHeader {
   width: 100%;
- display: flex;
- flex-direction: row;
+  display: flex;
+  flex-direction: row;
   background: map.get($colors, 'dark-bg') url('../assets/icons/pattern.svg');
   border-radius: 24px;
   padding: 56px;
@@ -81,22 +81,22 @@
   padding: 0.5rem;
 
   &__square {
-    width: 50px;
-    height: 50px;
+    width: 2.5rem;
+    height: 2.5rem;
+    padding: 0.5rem;
+    display: grid;
+    place-items: center;
     background: map.get($colors, 'light-bg');
     border-radius: 10px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
   }
 
   &__icon {
-    color: map.get($colors, 'primary');
-    width: 36px;
-    height: 36px;
-    font-size: map.get($font-sizes, 'md');
-    display: grid;
-    place-items: center;
+    font-size: map.get($font-sizes, 'sm');
+
+    & > * {
+      width: 100%;
+      height: 100%;
+    }
   }
 
   &__text {
@@ -167,32 +167,132 @@
 
 
 /* === Адаптив === */
-@media (max-width: 768px) {
+@media only screen and (max-width: 768px) {
+  .serviceHeader {
+    flex-direction: column;
+    padding: 2rem 1.5rem;
+    gap: 2rem;
+    border-radius: 1rem;
+  }
+
+  .content {
+    max-width: 100%;
+    text-align: center;
+  }
+
   .title {
-    font-size: 2rem;
+    text-align: left;
+    font-size: 1.5rem;
+    margin-bottom: 0.25rem;
   }
 
   .subtitle {
+    text-align: left;
     font-size: 1rem;
-  }
-
-  .features {
-    flex-direction: column;
-    align-items: center;
+    margin-bottom: 2rem;
+    width: 100%;
+    line-height: 1.5;
   }
 
   .buttons {
     flex-direction: column;
-    align-items: center;
+    width: 100%;
+    gap: 1rem;
+
+    a {
+      width: 100%;
+      
+      button {
+        width: 100%;
+        justify-content: center;
+      }
+    }
+
+    .phoneButton {
+      order: 1;
+    }
+
+    .telegramButton {
+      order: 2;
+    }
+  }
+
+  .features {
+    max-width: 100%;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .peculiarity {
+    width: 100%;
+    display: flex;
+    gap: 0.5rem;
+    padding: 0.5rem;
+    
+    &__square {
+      width: 2.5rem;
+      height: 2.5rem;
+      padding: 0.5rem;
+      display: grid;
+      place-items: center;
+    }
+
+    &__icon {
+      font-size: map.get($font-sizes, 'sm');
+
+      & > * {
+        width: 100%;
+        height: 100%;
+      }
+    }
+
+    &__text {
+      font-size: 1rem;
+    }
   }
 
   .statsContainer {
     flex-direction: column;
-    padding: 1rem;
-    gap: 1.5rem;
+    padding: 1.5rem;
+    gap: 1.25rem;
+    border-radius: 1rem;
   }
 
-  .divider {
-    display: none;
+  .item {
+    width: 100%;
+    min-width: unset;
+    padding: 0.5rem;
+    gap: 1rem;
+    background-color: rgba(0, 0, 0, 0.02);
+    border-radius: 0.75rem;
+  }
+
+  .iconWrapper {
+    width: 2rem;
+    height: 2rem;
+    margin-left: 0.5rem;
+  }
+
+  .icon {
+    font-size: 2rem;
+    height: 100%;
+    width: 100%;
+  }
+
+  .text {
+    font-size: 0.9375rem;
+    margin-bottom: 0.25rem;
+  }
+
+  .subtext {
+    font-size: 1rem;
+  }
+
+  .serviceName {
+    font-size: 0.9375rem;
+  }
+
+  .servicePrice {
+    font-size: 1.125rem;
   }
 }

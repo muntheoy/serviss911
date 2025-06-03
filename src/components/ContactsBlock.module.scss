@@ -48,6 +48,19 @@
   font-weight: 700;
 }
 
+.telegramLink {
+  font-family: $font-nunito;
+  font-weight: 700;
+  color: #27a7e7;
+  text-decoration: none;
+  transition: color 0.3s ease;
+
+  &:hover {
+    color: darken(#27a7e7, 10%);
+    text-decoration: underline;
+  }
+}
+
 .icon {
   font-size: 1.5rem;
   color: #f39c12;
@@ -61,4 +74,48 @@
   border-radius: 1rem;
   overflow: hidden;
   flex-grow: 1;
+}
+
+@media screen and (max-width: 768px) {
+  .content {
+    flex-direction: column;
+    gap: 1.25rem;
+  }
+
+  .container {
+    gap: 1.25rem;
+    padding: 2rem 0.5rem;
+  }
+
+  .row strong {
+    font-size: 1.25rem;
+    margin-bottom: 2rem;
+  }
+
+  .row span{
+    font-size: 1rem;
+  }
+
+  .info {
+    order: 1;
+    width: 100%;
+    gap: 1rem;
+  }
+
+  .mapWrapper {
+    order: 2;
+    height: 300px;
+  }
+
+  .container > :first-child {
+    width: 100%;
+  }
+
+  .container > :first-child p {
+    text-align: left;
+  }
+
+  .container > :first-child > :first-child {
+    justify-content: flex-start;
+  }
 }
