@@ -4,18 +4,16 @@ import BlockHeader from './BlockHeader';
 import { useDragScroll } from '../hooks/useDragScroll';
 import { REVIEWS_TEXT } from '../texts';
 
-// Импортируем фотографии для отзывов
-import photo1 from '../assets/img/reviews/1.jpg';
-import photo2 from '../assets/img/reviews/2.jpg';
-import photo3 from '../assets/img/reviews/3.jpg';
-import photo4 from '../assets/img/reviews/5.jpg';
-import photo5 from '../assets/img/reviews/4.jpg';
+import photo1 from '../assets/img/reviews/1.webp';
+import photo2 from '../assets/img/reviews/2.webp';
+import photo3 from '../assets/img/reviews/3.webp';
+import photo4 from '../assets/img/reviews/5.webp';
+import photo5 from '../assets/img/reviews/4.webp';
 import starIcon from '../assets/icons/star.svg';
 
 const Reviews = () => {
   const dragRef = useDragScroll();
 
-  // Объект с фотографиями для каждого отзыва
   const reviewPhotos = {
     1: photo1,
     2: photo2,
@@ -44,6 +42,7 @@ const Reviews = () => {
                   src={reviewPhotos[review.id]} 
                   alt={review.name} 
                   className={styles.avatar} 
+                  loading="lazy"
                 />
                 <h3 className={styles.reviewName}>{review.name}</h3>
               </div>

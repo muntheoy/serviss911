@@ -3,7 +3,7 @@ import { FaChevronDown } from "react-icons/fa";
 import QuestionIcon from "../assets/icons/faq.svg";
 import styles from "./FAQ.module.scss";
 import BlockHeader from "./BlockHeader";
-import { FAQ_TEXT } from "../texts"; // Путь может отличаться
+import { FAQ_TEXT } from "../texts";
 
 const FAQ = () => {
   const [openItems, setOpenItems] = useState({});

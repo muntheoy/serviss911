@@ -1,7 +1,6 @@
 @use '../styles/_variables' as *;
 @use 'sass:map';
 
-/* === Контейнер общего блока === */
 .container {
   width: 100%;
   display: flex;
@@ -9,7 +8,6 @@
   gap: 2rem;
 }
 
-/* === Верхняя секция: заголовок + особенности === */
 .serviceHeader {
   width: 100%;
   display: flex;
@@ -107,7 +105,6 @@
   }
 }
 
-/* === Нижний блок: статистика === */
 .statsContainer {
   width: 100%;
   display: flex;
@@ -139,8 +136,6 @@
 
 .icon {
   font-size: 4rem;
-  // width: 4rem;
-  // height: 4rem;
 }
 
 .textWrapper {
@@ -164,9 +159,6 @@
   font-family: $font-nunito;
 }
 
-
-
-/* === Адаптив === */
 @media only screen and (max-width: 768px) {
   .serviceHeader {
     flex-direction: column;

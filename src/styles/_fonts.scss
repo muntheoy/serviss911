@@ -1,10 +1,24 @@
-$font-montserrat: 'Montserrat', sans-serif;
-$font-nunito: 'Nunito', sans-serif;
+$system-fonts: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+
+$font-montserrat: 'Montserrat', $system-fonts;
+$font-nunito: 'Nunito', $system-fonts;
 
 body {
-  font-family: $font-nunito;
+  font-family: $system-fonts;
 }
 
 h1, h2, h3 {
-  font-family: $font-montserrat;
+  font-family: $system-fonts;
+}
+
+.montserrat-loaded {
+  h1, h2, h3 {
+    font-family: $font-montserrat;
+  }
+}
+
+.nunito-loaded {
+  body {
+    font-family: $font-nunito;
+  }
 }

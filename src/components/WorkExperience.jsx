@@ -2,7 +2,6 @@ import React from 'react';
 import styles from './WorkExperience.module.scss';
 import BlockHeader from './BlockHeader';
 import { WORK_EXPERIENCE_TEXT } from '../texts'; 
-import { BsFillTelephoneFill } from "react-icons/bs";
 
 const WorkExperience = () => {
   return (

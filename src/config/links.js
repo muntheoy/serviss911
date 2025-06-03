@@ -1,7 +1,6 @@
 const basePhoneNumber = "+79999999999";
 const baseTelegramHandle = "@LockServiceOmsk";
 
-// UTM-метки для Омска
 const utmParams = "utm_source=site&utm_medium=button&utm_campaign=omsk";
 
 export const LINKS = {

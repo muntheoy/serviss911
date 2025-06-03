@@ -1,5 +1,5 @@
 import styles from "./Header.module.scss";
-import { FaPhone, FaTelegramPlane } from "react-icons/fa";
+import { FaTelegramPlane } from "react-icons/fa";
 import Button from "./Button";
 import { HEADER_TEXT } from "../texts";
 import { BsFillTelephoneFill } from "react-icons/bs";

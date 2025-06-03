@@ -5,7 +5,7 @@ import styles from "./StartBlock.module.scss";
 import { BsFillTelephoneFill } from "react-icons/bs";
 import { TbHours24 } from "react-icons/tb";
 import { FaTruckFast } from "react-icons/fa6";
-import { FaPhone, FaTelegramPlane } from "react-icons/fa";
+import { FaTelegramPlane } from "react-icons/fa";
 import { FaTools } from "react-icons/fa";
 import { LINKS } from "../config/links";
 import { trackButtonClick } from "../utils/metrics";
@@ -42,7 +42,6 @@ const StartBlock = () => {
 
   return (
     <div className={styles.container}>
-      {/* Service Header */}
       <div className={styles.serviceHeader}>
         <div className={styles.content}>
           <div>
@@ -102,7 +101,6 @@ const StartBlock = () => {
         </div>
       </div>
 
-      {/* Stats */}
       <div className={styles.statsContainer}>
         <div className={styles.item}>
           <div className={styles.iconWrapper}>

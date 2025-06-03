@@ -103,7 +103,6 @@
     font-size: 1rem;
     cursor: pointer;
 
-    /* Скрываем текстовое содержимое в мобильной версии */
     & > :not(:first-child) {
       display: none;
     }
@@ -143,18 +142,15 @@
     cursor: pointer;
     text-decoration: none;
 
-    /* Скрываем все содержимое кнопки по умолчанию */
     & > * {
       display: none;
     }
 
-    /* Показываем только первый дочерний элемент (иконку) */
     & > :first-child {
       display: flex;
       align-items: center;
       justify-content: center;
 
-      /* Устанавливаем размер иконки как у иконки Telegram */
       svg,
       i {
         width: 1.5rem;
@@ -163,8 +159,7 @@
     }
   }
 
-  /* Добавляем стили для логотипа в мобильной версии */
   .left .logoButton {
-    white-space: nowrap; /* Запрещаем перенос текста */
+    white-space: nowrap;
   }
 }

@@ -1,106 +1,20 @@
-/* Основные настройки шрифтов */
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&family=Nunito:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&display=swap');
-
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-:root {
-  /* Шрифты */
-  --font-montserrat: 'Montserrat', -apple-system, sans-serif;
-  --font-nunito: 'Nunito', -apple-system, sans-serif;
-  
-  /* Веса шрифтов */
-  --fw-regular: 400;
-  --fw-medium: 500;
-  --fw-semibold: 600;
-  --fw-bold: 700;
-  
-  /* Межстрочные интервалы */
-  --lh-headings: 1.2;
-  --lh-body: 1.5;
-
-  /* Отступы */
-  --page-padding-x: 200px;
-  --page-padding-top: 56px;
-  --page-padding-bottom: 0;
-  
-  /* Максимальная ширина контента */
-  --max-content-width: 1920px;
-  background-color: #F0F0F0
-}
-
-/* Базовые настройки */
-body {
-  flex-direction: column;
-  align-items: center;
-  min-height: 100vh;
-  font-family: var(--font-nunito);
-  font-weight: var(--fw-regular);
-  line-height: var(--lh-body);
-  margin: 0;
-  padding: var(--page-padding-top) var(--page-padding-x) var(--page-padding-bottom);
-  box-sizing: border-box;
-  overflow-x: hidden;
-}
-
-/* Контейнер для ограничения максимальной ширины */
 .container {
-  max-width: var(--max-content-width);
-  margin: 0 auto;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  position: relative;
+  z-index: 1;
 }
 
-/* Если вам нужно, чтобы контент внутри контейнера был шириной 100% */
-.container > * {
-  width: 100%;
-}
-
-/* Заголовки */
 h1, h2, h3 {
-  font-family: var(--font-montserrat);
-  font-weight: var(--fw-bold);
-  line-height: var(--lh-headings);
-  margin: 0 0 0.5em;
+  letter-spacing: -0.02em;
 }
 
-/* Адаптивные отступы */
-@media (max-width: 1920px) {
+@media (max-width: 1024px) {
   :root {
-    --page-padding-x: 200px;
+    --page-padding-x: 100px;
   }
 }
 
-@media (max-width: 1600px) {
+@media (max-width: 480px) {
   :root {
-    --page-padding-x: 80px;
-  }
-}
-
-@media (max-width: 992px) {
-  :root {
-    --page-padding-x: 60px;
-    --page-padding-top: 48px;
-  }
-}
-
-@media (max-width: 768px) {
-  :root {
-    --page-padding-x: 40px;
-    --page-padding-top: 36px;
-    --lh-body: 1.5;
-  }
-}
-
-@media (max-width: 576px) {
-  :root {
-    --page-padding-x: 24px;
-    --page-padding-top: 32px;
+    --page-padding-x: 0.5rem;
   }
 }

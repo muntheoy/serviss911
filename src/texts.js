@@ -85,10 +85,6 @@ export const HEADER_TEXT = {
   ariaLabelCall: "Позвонить",
 };
 
-import { FaTelegramPlane } from "react-icons/fa";
-import { BsFillTelephoneFill } from "react-icons/bs";
-import { PiChatCircleDotsFill } from "react-icons/pi";
-
 export const HOW_WE_WORK_TEXT = {
   title: "Как мы работаем",
   steps: [
@@ -107,7 +103,7 @@ export const HOW_WE_WORK_TEXT = {
     {
       stepNumber: 3,
       title: "Выезд мастера",
-      description: "Специалист выезжает в течение 30 минут",
+      description: "Специалист приезжает в течение 30 минут",
       showButtons: false,
     },
     {
@@ -165,7 +161,7 @@ export const SERVICES_TEXT = {
   list: [
     {
       title: 'Открытие автомобилей',
-      icon: 'car', // должно быть именно 'car'
+      icon: 'car',
       services: [
         { name: 'Вскрытие двери', price: 'от 1000 ₽' },
         { name: 'Вскрытие багажника', price: 'от 1000 ₽' },

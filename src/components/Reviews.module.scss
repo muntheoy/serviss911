@@ -1,4 +1,3 @@
-// Reviews.module.scss
 @use '../styles/variables' as *;
 @use 'sass:map';
 
@@ -86,12 +85,11 @@
   height: 1.8rem;
   
   path {
-    fill: #FFD700; // Золотой цвет
+    fill: #FFD700;
     transition: all 0.2s ease;
   }
 }
 
-/* Анимация появления карточек */
 @keyframes slideIn {
   from {
     opacity: 0;

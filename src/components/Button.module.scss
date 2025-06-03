@@ -25,7 +25,6 @@
     flex-shrink: 0;
   }
 
-  // Sizes
   &.small {
     padding: 0.5rem 1rem;
     font-size: map-get($font-sizes, sm);
@@ -46,7 +45,6 @@
     }
   }
 
-  // Variants
   &.filled {
     background-color: map-get($colors, primary-500);
     color: white;
@@ -106,7 +104,6 @@
     }
   }
 
-  // Color variants (like .blue, .red etc.)
   @each $name, $color in $colors {
   &.#{$name}.iconOnly {
     background-color: $color;

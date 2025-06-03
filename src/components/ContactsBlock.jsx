@@ -1,4 +1,4 @@
-import { YMaps, Map, Placemark } from "@pbe/react-yandex-maps";
+import React, { useState, useEffect } from 'react';
 import { FaPhone, FaMapMarkerAlt, FaTelegramPlane } from "react-icons/fa";
 import styles from "./ContactsBlock.module.scss";
 import BlockHeader from "./BlockHeader";
@@ -15,13 +15,22 @@ const ContactsBlock = () => {
     telegramLabel,
     phone,
     address,
-    coordinates,
   } = CONTACTS_TEXT;
+
+  const [isMapLoaded, setIsMapLoaded] = useState(false);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setIsMapLoaded(true);
+    }, 5000);
+
+    return () => clearTimeout(timer);
+  }, []);
 
   const handleTelegramClick = () => {
     trackButtonClick(
-      LINKS.telegram.handle,
-      'telegram_link',
+      'Написать в Telegram',
+      'telegram_button',
       LINKS.telegram.url,
       'contacts'
     );
@@ -62,14 +71,27 @@ const ContactsBlock = () => {
                 className={styles.telegramLink}
                 onClick={handleTelegramClick}
               >
-                {LINKS.telegram.handle}
+                Написать в Telegram
               </a>
             </div>
           </div>
         </div>
 
         <div className={styles.mapWrapper}>
-          <iframe src={`https://yandex.ru/map-widget/v1/?um=constructor%${LINKS.yandexMapId}&amp;source=constructor`} width="100%" height="100%" frameBorder="0"></iframe>
+          {isMapLoaded ? (
+            <iframe 
+              src={`https://yandex.ru/map-widget/v1/?um=constructor%${LINKS.yandexMapId}&amp;source=constructor`} 
+              width="100%" 
+              height="100%" 
+              frameBorder="0" 
+              loading="lazy" 
+              title="Карта проезда"
+            />
+          ) : (
+            <div className={styles.mapPlaceholder}>
+              Загрузка карты...
+            </div>
+          )}
         </div>
       </div>
     </div>
