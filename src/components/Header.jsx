@@ -1,5 +1,5 @@
 import styles from "./Header.module.scss";
-import { FaPhone, FaTelegramPlane } from "react-icons/fa";
+import { FaTelegramPlane } from "react-icons/fa";
 import Button from "./Button";
 import { HEADER_TEXT } from "../texts";
 import { BsFillTelephoneFill } from "react-icons/bs";
@@ -72,7 +72,7 @@ export default function Header() {
         </a>
 
         <a
-          href={LINKS.phone.whatsapp}
+          href={LINKS.phone.tel}
           target="_blank"
           rel="noopener noreferrer"
         >
@@ -83,7 +83,7 @@ export default function Header() {
             ariaLabel={HEADER_TEXT.ariaLabelCall}
             className={styles.callButton}
           >
-            {!isMobile && HEADER_TEXT.phoneNumber}
+            {!isMobile && LINKS.phone.raw}
           </Button>
         </a>
       </div>

@@ -26,14 +26,12 @@ const Button = ({
   ].join(' ');
 
   const handleClick = (e) => {
-    // Отслеживаем клик
     trackButtonClick(
       children?.toString() || ariaLabel || 'Button',
       'button',
       props.href
     );
     
-    // Вызываем оригинальный onClick, если он есть
     if (onClick) {
       onClick(e);
     }
@@ -43,7 +41,7 @@ const Button = ({
     <button
       className={classNames}
       onClick={handleClick}
-      aria-label={isIconOnly ? ariaLabel : undefined}
+      aria-label={ariaLabel}
       {...props}
     >
       {icon && iconPosition === 'left' && (

@@ -12,7 +12,7 @@
 }
 
 .description {
-  flex: 1; // 💡 Занимает 50% от родителя (вместе с imageWrapper)
+  flex: 1;
   display: flex;
   flex-direction: column;
   font-size: 1.25rem;
@@ -28,7 +28,7 @@
 }
 
 .imageWrapper {
-  flex: 1; // 💡 Тоже занимает 50%
+  flex: 1;
   
   img {
     width: 100%;

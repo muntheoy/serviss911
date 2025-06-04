@@ -1,5 +1,5 @@
 import styles from './Footer.module.scss';
-import { FOOTER_TEXT } from '../texts'; // путь может отличаться
+import { FOOTER_TEXT } from '../texts';
 
 export default function Footer() {
   return (

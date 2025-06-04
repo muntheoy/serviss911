@@ -1,4 +1,3 @@
-// Функция для отправки событий в Яндекс.Метрику
 export const trackEvent = (eventName, params = {}) => {
   if (window.ym) {
     console.log('Sending event to Yandex.Metrica:', eventName, params); // Отладочный вывод
@@ -8,7 +7,6 @@ export const trackEvent = (eventName, params = {}) => {
   }
 };
 
-// Функция для отслеживания кликов по кнопкам
 export const trackButtonClick = (buttonText, buttonType, href = null, section = null) => {
   trackEvent('button_click', {
     button_text: buttonText,

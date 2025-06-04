@@ -5,10 +5,11 @@ import styles from "./StartBlock.module.scss";
 import { BsFillTelephoneFill } from "react-icons/bs";
 import { TbHours24 } from "react-icons/tb";
 import { FaTruckFast } from "react-icons/fa6";
-import { FaPhone, FaTelegramPlane } from "react-icons/fa";
+import { FaTelegramPlane } from "react-icons/fa";
 import { FaTools } from "react-icons/fa";
 import { LINKS } from "../config/links";
 import { trackButtonClick } from "../utils/metrics";
+import { START_BLOCK_TEXT } from "../texts";
 
 const Peculiarity = ({ icon = <img src={keyIcon} alt="" />, text }) => {
   return (
@@ -26,7 +27,7 @@ const StartBlock = () => {
     trackButtonClick(
       'Позвонить',
       'phone_button',
-      LINKS.phone.whatsapp,
+      LINKS.phone.raw,
       'start'
     );
   };
@@ -42,24 +43,21 @@ const StartBlock = () => {
 
   return (
     <div className={styles.container}>
-      {/* Service Header */}
       <div className={styles.serviceHeader}>
         <div className={styles.content}>
           <div>
             <h1 className={styles.title}>
-              <span>Вскрытие замков</span>
-
-              <span>в Омске</span>
+              <span>{START_BLOCK_TEXT.title.first}</span>
+              <span>{START_BLOCK_TEXT.title.second}</span>
             </h1>
             <p className={styles.subtitle}>
-              Откроем замок любой сложности аккуратно и быстро.
-              Мы — ваш надежный выбор.
+              {START_BLOCK_TEXT.subtitle}
             </p>
           </div>
 
           <div className={styles.buttons}>
             <a
-              href={LINKS.phone.whatsapp}
+              href={LINKS.phone.tel}
               target="_blank"
               rel="noopener noreferrer"
               className={styles.phoneButton}
@@ -95,44 +93,26 @@ const StartBlock = () => {
         </div>
 
         <div className={styles.features}>
-          <Peculiarity text="Любая сложность" />
-          <Peculiarity text="Без повреждений" />
-          <Peculiarity text="Замки в наличии" />
-          <Peculiarity text="Сотрудничаем с МВД и МЧС" />
+          {START_BLOCK_TEXT.features.map((text, index) => (
+            <Peculiarity key={index} text={text} />
+          ))}
         </div>
       </div>
 
-      {/* Stats */}
       <div className={styles.statsContainer}>
-        <div className={styles.item}>
-          <div className={styles.iconWrapper}>
-            <TbHours24 className={styles.icon} />
+        {START_BLOCK_TEXT.stats.map((stat, index) => (
+          <div key={index} className={styles.item}>
+            <div className={styles.iconWrapper}>
+              {index === 0 && <TbHours24 className={styles.icon} />}
+              {index === 1 && <FaTruckFast className={styles.icon} />}
+              {index === 2 && <FaTools className={styles.icon} />}
+            </div>
+            <div className={styles.textWrapper}>
+              <div className={styles.text}>{stat.title}</div>
+              <div className={styles.subtext}>{stat.subtitle}</div>
+            </div>
           </div>
-          <div className={styles.textWrapper}>
-            <div className={styles.text}>Поможем в любое время</div>
-            <div className={styles.subtext}>Работаем 24/7</div>
-          </div>
-        </div>
-
-        <div className={styles.item}>
-          <div className={styles.iconWrapper}>
-            <FaTruckFast className={styles.icon} />
-          </div>
-          <div className={styles.textWrapper}>
-            <div className={styles.text}>Работаем оперативно</div>
-            <div className={styles.subtext}>Приезд от 15 минут</div>
-          </div>
-        </div>
-
-        <div className={styles.item}>
-          <div className={styles.iconWrapper}>
-            <FaTools className={styles.icon} />
-          </div>
-          <div className={styles.textWrapper}>
-            <div className={styles.text}>Чиним эффективно</div>
-            <div className={styles.subtext}>Среднее время открытия 7 минут</div>
-          </div>
-        </div>
+        ))}
       </div>
     </div>
   );

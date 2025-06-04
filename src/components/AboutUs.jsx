@@ -1,7 +1,7 @@
 import styles from "./AboutUsBlock.module.scss";
-import locksmithImage from "../assets/img/lockmaster.png"; 
+import locksmithImage from "../assets/img/lockmaster.webp"; 
 import BlockHeader from "./BlockHeader";
-import { ABOUT_US_TEXT } from "../texts"; // или '../constants/texts'
+import { ABOUT_US_TEXT } from "../texts";
 
 const AboutUsBlock = () => {
   return (

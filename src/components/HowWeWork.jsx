@@ -5,14 +5,12 @@ import Button from "./Button";
 import { FaTelegramPlane } from "react-icons/fa";
 import { BsFillTelephoneFill } from "react-icons/bs";
 import { PiChatCircleDotsFill } from "react-icons/pi";
-import { HiOutlineWrenchScrewdriver } from "react-icons/hi2";
 import { HOW_WE_WORK_TEXT } from "../texts";
 import { FaShippingFast } from "react-icons/fa";
 import { FaLockOpen } from "react-icons/fa6";
 import { LINKS } from "../config/links";
 import { trackButtonClick } from "../utils/metrics";
 
-// Массив иконок по порядку шагов
 const stepIcons = [
   <BsFillTelephoneFill key="1" />,
   <PiChatCircleDotsFill key="2" />,
@@ -69,7 +67,7 @@ const RequestCard = ({
     trackButtonClick(
       'Звонок',
       'phone_button',
-      LINKS.phone.whatsapp,
+      LINKS.phone.raw,
       'how_we_work'
     );
   };
@@ -106,7 +104,7 @@ const RequestCard = ({
             onClick={handleChatClick}
           />
           <a
-            href={LINKS.phone.whatsapp}
+            href={LINKS.phone.tel}
             target="_blank"
             rel="noopener noreferrer"
           >
