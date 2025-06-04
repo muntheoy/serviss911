@@ -11,6 +11,17 @@ export const loadScript = (src, callback = null) => {
   document.body.appendChild(script);
 };
 
+// Функция для загрузки Bitrix24
+export const loadBitrix24 = () => {
+  (function(w,d,u){
+    var s=d.createElement('script');
+    s.async=true;
+    s.src=u+'?'+(Date.now()/60000|0);
+    var h=d.getElementsByTagName('script')[0];
+    h.parentNode.insertBefore(s,h);
+  })(window,document,'https://cdn-ru.bitrix24.ru/b33648864/crm/site_button/loader_1_wg5zlx.js');
+};
+
 // Функция для отложенной загрузки Яндекс.Метрики
 export const loadYandexMetrica = () => {
   (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
@@ -27,9 +38,9 @@ export const loadYandexMetrica = () => {
     trackHash:true,
     ecommerce:"dataLayer",
     params: {
-      city: "Омск",
-      region: "Омская область",
-      domain: "omsk112.ru"
+      city: "Ижевск",
+      region: "Удмуртская Республика",
+      domain: "igevsk112.ru"
     }
   });
 
@@ -52,6 +63,9 @@ export const loadYandexMetrica = () => {
 export const loadDelayedScripts = () => {
   // Загружаем Яндекс.Метрику
   loadYandexMetrica();
+  
+  // Загружаем Bitrix24
+  loadBitrix24();
   
   // Добавляем noscript для Яндекс.Метрики
   const noscript = document.createElement('noscript');

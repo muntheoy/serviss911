@@ -9,7 +9,7 @@ const BlockHeader = ({ showButtons = true, title = "Оставляете зая�
     trackButtonClick(
       'Позвонить',
       'phone_button',
-      LINKS.phone.whatsapp,
+      LINKS.phone.raw,
       'header'
     );
   };
@@ -20,7 +20,7 @@ const BlockHeader = ({ showButtons = true, title = "Оставляете зая�
       {showButtons && (
         <div className={styles.button}>
           <a
-            href={LINKS.phone.whatsapp}
+            href={LINKS.phone.tel}
             target="_blank"
             rel="noopener noreferrer"
             onClick={handlePhoneClick}

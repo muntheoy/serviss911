@@ -2,10 +2,10 @@ import React, { useState, useEffect } from 'react';
 import { FaPhone, FaMapMarkerAlt, FaTelegramPlane } from "react-icons/fa";
 import styles from "./ContactsBlock.module.scss";
 import BlockHeader from "./BlockHeader";
-import { CONTACTS_TEXT } from "../texts";
 import { BsFillTelephoneFill } from "react-icons/bs";
 import { LINKS } from "../config/links";
 import { trackButtonClick } from "../utils/metrics";
+import { CONTACTS_TEXT } from "../texts";
 
 const ContactsBlock = () => {
   const {
@@ -36,6 +36,15 @@ const ContactsBlock = () => {
     );
   };
 
+  const handlePhoneClick = () => {
+    trackButtonClick(
+      'Позвонить',
+      'phone_button',
+      LINKS.phone.tel,
+      'contacts'
+    );
+  };
+
   return (
     <div className={styles.container}>
       <BlockHeader showButtons={false} title={title} />
@@ -46,7 +55,13 @@ const ContactsBlock = () => {
             <div>
               <strong>{phoneLabel}</strong>
               <br />
-              <span>{phone}</span>
+              <a 
+                href={LINKS.phone.tel}
+                onClick={handlePhoneClick}
+                className={styles.phoneLink}
+              >
+                {phone}
+              </a>
             </div>
           </div>
 

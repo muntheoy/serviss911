@@ -67,7 +67,7 @@ const RequestCard = ({
     trackButtonClick(
       'Звонок',
       'phone_button',
-      LINKS.phone.whatsapp,
+      LINKS.phone.raw,
       'how_we_work'
     );
   };
@@ -104,7 +104,7 @@ const RequestCard = ({
             onClick={handleChatClick}
           />
           <a
-            href={LINKS.phone.whatsapp}
+            href={LINKS.phone.tel}
             target="_blank"
             rel="noopener noreferrer"
           >
